@@ -1,0 +1,328 @@
+// Home page styles
+
+body#home {
+
+	main#content {
+		
+	}
+
+	section {
+		padding-top: 			100px;
+		padding-bottom: 		100px;
+	}
+
+	div.logo {
+
+		display: 		inline-block;
+		position: 		relative;
+
+		@include xs {
+			width: 			100px;
+			height: 		100px;
+		}
+
+		@include sm {
+			width: 			100px;
+			height: 		100px;
+		}
+
+		@include md {
+			width: 			130px;
+			height: 		130px;
+		}
+
+		@include lg {
+			width: 			150px;
+			height: 		150px;
+		}
+
+		@include xl {
+			width: 			175px;
+			height: 		175px;
+		}
+
+		div.logo--soundbar {
+
+			display: 	flex;
+			position: 	relative;
+
+			float: 		left;
+
+			@include clearfix;
+
+			background: $gray-300;
+			@include dark-mode {
+				background: $gray-900;
+			}
+
+			height: 	100%;
+			width: 		8%;
+
+			margin-right: 3%;
+
+			&::after {
+				display: block;
+				position: relative;
+
+				width: 100%;
+
+				align-self: center;
+
+				background: $cyan;
+
+				content: "";
+			}
+
+			&:nth-child(1)::after {
+				height: 4%;
+				@include animation(soundbar1 0.5s infinite alternate);			
+			}
+
+			&:nth-child(2)::after {
+				height: 35%;
+				@include animation(soundbar2 0.75s infinite alternate);
+			}
+
+			&:nth-child(3)::after {
+				height: 20%;
+				@include animation(soundbar3 0.5s infinite alternate);
+			}
+
+			&:nth-child(4)::after {
+				height: 55%;
+				@include animation(soundbar4 0.9s infinite alternate);
+			}
+
+			&:nth-child(5)::after {
+				height: 85%;
+				@include animation(soundbar5 0.5s infinite alternate);
+			}
+
+			&:nth-child(6)::after {
+				height: 45%;
+				@include animation(soundbar6 .7s infinite alternate);
+			}
+
+			&:nth-child(7)::after {
+				height: 65%;
+				@include animation(soundbar7 0.9s infinite alternate);
+			}
+
+			&:nth-child(8)::after {
+				height: 20%;
+				@include animation(soundbar8 0.85s infinite alternate);
+			}
+
+			&:nth-child(9)::after {
+				height: 2%;
+				@include animation(soundbar9 1s infinite alternate);
+			}
+
+			@include keyframes(soundbar1) {
+				0%  { 
+					transform: scaleY(1);
+				}
+				50% {
+					transform: scaleY(0.8);
+				}
+				100% { 
+					transform: scaleY(1.5);
+				}
+			}
+
+			@include keyframes(soundbar2) {
+				0%  { 
+					transform: scaleY(1);
+				}
+				30% {
+					transform: scaleY(0.8);
+				}
+				70% { 
+					transform: scaleY(1.5);
+				}
+				100% { 
+					transform: scaleY(0.5);
+				}
+			}
+
+			@include keyframes(soundbar3) {
+				0%  { 
+					transform: scaleY(1);
+				}
+				40% {
+					transform: scaleY(0.5);
+				}
+				100% { 
+					transform: scaleY(1.5);
+				}
+			}
+
+			@include keyframes(soundbar4) {
+				0%  { 
+					transform: scaleY(1);
+				}
+				25% {
+					transform: scaleY(0.8);
+				}
+				50% {
+					transform: scaleY(1);
+				}
+				75% {
+					transform: scaleY(0.9);
+				}
+				100% { 
+					transform: scaleY(1.5);
+				}
+			}
+
+			@include keyframes(soundbar5) {
+				0%  { 
+					transform: scaleY(1);
+				}
+				80% {
+					transform: scaleY(0.6);
+				}
+				100% { 
+					transform: scaleY(0.8);
+				}
+			}
+
+			@include keyframes(soundbar6) {
+				0%  { 
+					transform: scaleY(1);
+				}
+				50% {
+					transform: scaleY(0.5);
+				}
+				100% { 
+					transform: scaleY(0.75);
+				}
+			}
+
+			@include keyframes(soundbar7) {
+				0%  { 
+					transform: scaleY(1);
+				}
+				30% {
+					transform: scaleY(1.2);
+				}
+				70% {
+					transform: scaleY(0.7);
+				}
+				100% { 
+					transform: scaleY(1.1);
+				}
+			}
+
+			@include keyframes(soundbar8) {
+				0%  { 
+					transform: scaleY(1);
+				}
+				40% {
+					transform: scaleY(1.2);
+				}
+				100% { 
+					transform: scaleY(0.9);
+				}
+			}
+
+			@include keyframes(soundbar9) {
+				0%  { 
+					transform: scaleY(1);
+				}
+				50% {
+					transform: scaleY(2);
+				}
+				100% { 
+					transform: scaleY(0.9);
+				}
+			}
+
+		}
+
+	}
+
+	section#dept-bad-ideas { 
+
+		color: $black;
+		@include dark-mode {
+			color: $black !important;
+		}
+
+		padding-top: 0;
+		padding-bottom: 100px;
+
+		div.container {
+			padding-top: 15px;
+			padding-bottom: 15px;
+			
+			background: $bad-ideas-yellow;
+			background-image: url("/assets/images/department-of-bad-ideas-logo-emblem-only.svg");
+			background-repeat: no-repeat;
+			background-size: 150% 120%;
+			@include md-up {
+				background-size: 60% 100%;
+			}
+			background-origin: content-box, content-box;
+			
+			@include clearfix;
+		}
+
+		div.pod-description {
+			max-width: 65ch;
+
+			float: right;
+			margin-right: 20px;
+
+			p:last-child {
+				padding-bottom: 0;
+			}
+			margin-bottom: 50px;
+		}
+
+		img {
+
+			width: 100%;
+
+			max-width: 200px;
+
+			margin-bottom: 30px;
+
+			@include md-up {
+				max-width: 300px;
+
+				margin-top: 100px;
+			}
+
+		}
+
+		p.link {
+			margin-top: 20px;
+
+			a {
+				color: $black;
+				text-decoration: none;
+				border: 2px solid $black;
+				padding: 10px 25px;
+
+				&:hover {
+					color: $bad-ideas-yellow;
+					background: $black;
+				}
+				&:focus {
+					outline: 2px solid $black;
+					border: 2px solid $bad-ideas-yellow;
+					color: $bad-ideas-yellow;
+					background: $black;
+				}
+			}
+		}
+	
+	}
+
+	footer#site-footer section.container {
+		padding-top: 0 !important;
+		padding-bottom: 0 !important;
+	}
+
+}
