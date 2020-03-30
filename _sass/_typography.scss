@@ -306,10 +306,17 @@ p {
 	
 	font-weight:			$p-font-weight;
 	
+	&.lead {
+			
+			padding-bottom: 	0;			
+			font-weight:		bold;
+	}
+
 	span.small-caps {
 		font-variant: small-caps !important;
 		font-size: 		120%;
 	}
+	
 }
 
 sup {
@@ -408,28 +415,6 @@ ul {
 	
 	list-style: none;
 	
-	> li::before {
-		position: absolute;
-	    content: "–";
-	    
-	    left: $p-font-size-base;
-	    
-	    @include xs {	    
-		    left: $p-font-size-base-xs;
-		}
-		@include sm {	    
-		    left: -($p-font-size-base-sm / 2);
-		}
-		@include md {	    
-		    left: -($p-font-size-base-md / 2);
-		}
-		@include lg {	    
-		    left: -($p-font-size-base-lg / 2);
-		}
-		@include xl {	    
-		    left: -($p-font-size-base-xl / 2);
-		}
-    }
 }
 
 ol {
@@ -827,16 +812,7 @@ table {
 	}
 	
 	th, td {
-
-		padding: 5px 10px;
-		
-		&:first-child {
-			padding: 5px 10px 5px 0px;
-		}
-		&:last-child {
-			padding: 5px 0px 5px 10px;
-		}
-
+    	padding: 5px 10px;
 		vertical-align: top;
 		
 		border-left: 1px solid $gray-200;
@@ -846,14 +822,6 @@ table {
 		
 		&:first-child {
 			border-left: none;
-		}
-	}
-
-	&.first-col-min-width-25 {
-		td:first-child {
-			@include md-up {
-				width: 25%;
-			}
 		}
 	}
 }

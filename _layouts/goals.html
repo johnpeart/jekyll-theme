@@ -1,0 +1,69 @@
+---
+layout: default
+---
+	
+{% include header.html %}
+		
+<main id="content" class="container">
+
+	{% assign goalmax = 0 %}
+	{% assign goalprogress = 0 %}
+	{% assign goalno = 0 %}
+	{% assign goalpercentage = 0 %}
+	{% assign dayoftheyear = "now" | date: "%j" %}
+	{% assign currentyear = "now" | date: "%Y" | plus: 0 %}
+	{% assign pageyear = page.year | plus: 0 %}
+
+	{% assign goalsdata = "goals-" | append: page.year %}
+
+	<section id="page-content">
+
+		<h1 id="site-heading">{{ site.title }}</h1>
+		
+		{% if currentyear != pageyear %}
+
+			<blockquote>
+				<p>These were my goals for {{ page.year }}.</p>
+			</blockquote>
+
+		{% endif %}
+
+			<ul id="goals-list">
+			
+				{% for goals in site.data[goalsdata] %}
+						
+					{% assign goalvalue = goals.progress | divided_by: goals.max | times: 100 %}
+				
+					<li>
+								
+						<h2>{{ goals.goal }}</h2>
+						<p class="lead">{{ goals.description }}</p>
+						<progress max="{{ goals.max }}" value="{{ goals.progress }}">
+							<p><strong>{{ goals.progress | remove: ".0" }}</strong> out of <strong>{{ goals.max | remove: ".0" }}</strong></p>
+						</progress>
+								
+						{% if goals.comment != "" %}<p>{{ goals.comment }}</p>{% endif %}
+					
+					</li>
+							
+					{% capture goalmax %}{{ goalmax | plus: goals.max | floor }}{% endcapture %}
+					{% capture goalprogress %}{{ goalprogress | plus: goals.progress }}{% endcapture %}
+					{% if goalvalue >= 80 %}
+						{% capture goalpercentage %}{{ goalpercentage | plus: 100 | floor }}{% endcapture %}
+					{% else %}
+						{% capture goalpercentage %}{{ goalpercentage | plus: goalvalue | floor }}{% endcapture %}
+					{% endif %}
+					{% capture goalno %}{{ goalno | plus: 1 }}{% endcapture %}
+				
+				{% endfor %}	
+								
+				{% include totaliser.html %}
+			
+			</ul>
+
+							
+	</section>
+	
+</main>
+
+{% include footer.html %}
