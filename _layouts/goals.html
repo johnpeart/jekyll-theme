@@ -12,20 +12,25 @@ layout: default
 	{% assign goalpercentage = 0 %}
 	{% assign dayoftheyear = "now" | date: "%j" %}
 	{% assign currentyear = "now" | date: "%Y" | plus: 0 %}
-	{% assign pageyear = page.year | plus: 0 %}
 
+	{% if page.year %}
 	{% assign goalsdata = "goals-" | append: page.year %}
+	{% else %}
+	{% assign goalsdata = "goals-" | append: currentyear %}
+	{% endif %}
 
 	<section id="page-content">
 
 		<h1 id="site-heading">{{ site.title }}</h1>
 		
-		{% if currentyear != pageyear %}
+		{% if page.year %}
+		{% if currentyear != page.year %}
 
 			<blockquote>
 				<p>These were my goals for {{ page.year }}.</p>
 			</blockquote>
 
+		{% endif %}
 		{% endif %}
 
 			<ul id="goals-list">
