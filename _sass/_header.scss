@@ -1,0 +1,285 @@
+// Header styles
+
+header#site-header {
+	
+	position: 	relative;
+	z-index: 	10000000;
+
+	background: 		$header-background;
+	
+	/* Text and background color for dark mode */
+	@media (prefers-color-scheme: dark) {
+	    background: 	$header-background-dark-mode;
+	}
+	
+	nav {
+		
+		p, li.header-link {
+			display: inline-block;
+			
+			margin: 			0;
+			
+			@include xs {
+				font-size: 		$header-font-size-base-xs;
+				line-height: 	$header-line-height-base-xs;
+				padding-top: 		$header-padding-top-xs;
+				padding-bottom: 	$header-padding-bottom-xs;
+			}
+			@include sm {
+				font-size: 		$header-font-size-base-sm;
+				line-height: 	$header-line-height-base-sm;
+				padding-top: 		$header-padding-top-sm;
+				padding-bottom: 	$header-padding-bottom-sm;
+			}
+			@include md {
+				font-size: 		$header-font-size-base-md;
+				line-height: 	$header-line-height-base-md;
+				padding-top: 		$header-padding-top-md;
+				padding-bottom: 	$header-padding-bottom-md;
+			}
+			@include lg {
+				font-size: 		$header-font-size-base-lg;
+				line-height: 	$header-line-height-base-lg;
+				padding-top: 		$header-padding-top-lg;
+				padding-bottom: 	$header-padding-bottom-lg;
+			}
+			@include xl {
+				font-size: 		$header-font-size-base-xl;
+				line-height: 	$header-line-height-base-xl;
+				padding-top: 		$header-padding-top-xl;
+				padding-bottom: 	$header-padding-bottom-xl;
+			}
+			
+			font-weight:		$header-font-weight;
+			
+			&.header-wordmark {
+				font-weight:		$header-wordmark-font-weight;
+			}
+			
+			&:before {
+				position: 		absolute;
+			    content: 		none;
+			    
+			    left: 			0;
+			}
+		}
+		
+		a {
+				
+			color:			$header-color;
+			
+			/* Text and background color for dark mode */
+			@media (prefers-color-scheme: dark) {
+			    color: 		$header-color-dark-mode;
+			}
+
+			text-decoration: 		$header-text-decoration;
+		
+			&:hover,
+			&:focus {
+				color:				$header-color-hover;
+				text-decoration: 	$header-text-decoration-hover;
+			}
+			
+		}
+		
+		div.header-align-left {
+			
+			display: 			block;	
+			position: 			relative;
+					
+			background: 			$header-background;
+			z-index: 			1000000;
+			
+			@include dark-mode {	
+				background:		$header-background-dark-mode;
+			}
+			
+			@include md-up {
+				display: 	inline-block;			
+				float: 		left;
+			}
+
+		}
+		
+		div.header-align-right {
+					
+			@include xs {
+								
+				z-index: 50000;
+				
+				margin-top: 		-100vh;
+				transition: 		all 0.75s ease-in;
+							
+				&.open {
+					margin-top: 	0;
+					transition: 		all 0.75s ease-out;
+				}
+	
+			}
+			
+			@include sm {
+									
+				z-index: 50000;
+				
+				margin-top: 		-100vh;
+				transition: 		all 1s;
+							
+				&.open {
+					margin-top: 	0;
+					transition: 		all 1s;
+				}
+	
+			}
+			
+			@include md-up {
+				display: 	inline-block;
+				float: 		right;
+			}
+			
+			ul.header-menu {
+				margin: 	0;
+				padding: 	0;
+			}
+			
+			p, li.header-link {
+				
+				display: block;
+				
+				@include md-up {
+					display: inline-block;
+					
+					margin-left: 25px;
+					margin-right: 0;
+				}
+				
+				font-size: 			$p-font-size-base;
+				line-height: 		$p-line-height-base;
+				padding-top: 			$header-padding-top;
+				padding-bottom: 		$header-padding-bottom;
+				
+				@include xs {
+					font-size: 		$p-font-size-base-xs;
+					line-height: 	$p-line-height-base-xs;
+					padding-top: 		$header-padding-top-xs;
+					padding-bottom: 	$header-padding-bottom-xs;
+				}
+				@include sm {
+					font-size: 		$p-font-size-base-sm;
+					line-height: 	$p-line-height-base-sm;
+					padding-top: 		$header-padding-top-sm;
+					padding-bottom: 	$header-padding-bottom-sm;
+				}
+				@include md {
+					font-size: 		$p-font-size-base-md;
+					line-height: 	$p-line-height-base-md;
+					padding-top: 		$header-padding-top-md;
+					padding-bottom: 	$header-padding-bottom-md;
+				}
+				@include lg {
+					font-size: 		$p-font-size-base-lg;
+					line-height: 	$p-line-height-base-lg;
+					padding-top: 		$header-padding-top-lg;
+					padding-bottom: 	$header-padding-bottom-lg;
+				}
+				@include xl {
+					font-size: 		$p-font-size-base-xl;
+					line-height: 	$p-line-height-base-xl;
+					padding-top: 		$header-padding-top-xl;
+					padding-bottom: 	$header-padding-bottom-xl;
+				}
+			
+				font-weight:		$header-font-weight;
+			}
+			
+		}
+		
+		button#header-menu-toggle {
+			
+			display: 	block;
+			position: 	absolute;
+
+			border: 		none;
+			background: 	none;
+			
+			z-index: 	9999999999;
+			
+			left: 		auto;
+			bottom: 		auto;
+			right: 		0;
+			top:			0;
+			
+			margin: 		0;
+			
+			@include xs {
+				padding:		($header-padding-top-xs + ($header-font-size-base-xs * 0.2)) $container-padding;
+			}
+			
+			@include sm {
+				padding:		($header-padding-top-sm + ($header-font-size-base-sm * 0.2)) $container-padding;
+			}
+			
+			font-weight:				$header-wordmark-font-weight;
+			
+			&:hover,
+			&:focus {
+				outline: 			none;
+			
+				svg#header-menu-toggle-image { 
+					rect,
+					&.open rect {
+						fill:			$link-hover-color;
+						
+						@include dark-mode {
+							fill:		$link-hover-color-dark-mode;
+						}
+					}
+				}
+				
+			}
+			
+			@include dark-mode {
+				color: 				$white;
+			}
+			
+			@include md-up {
+				display: none;
+			}
+			
+			svg#header-menu-toggle-image {
+
+				@include xs {
+					width: 			$header-font-size-base-xs * 0.8;
+					height: 		$header-font-size-base-xs * 0.8;
+				}
+				@include sm {	
+					width: 			$header-font-size-base-sm * 0.8;
+					height: 		$header-font-size-base-sm * 0.8;
+				}
+				
+				rect {
+					fill:			$black;
+					
+					@include dark-mode {
+						fill:		$white;
+					}
+				}
+				
+				
+				
+				&.open rect {
+					fill:			$gray-500;
+					
+					@include dark-mode {
+						fill:		$gray-500;
+					}
+				}
+
+			}
+		
+		}
+		
+		@include clearfix;
+	}
+	
+}

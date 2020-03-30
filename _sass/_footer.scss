@@ -1,0 +1,96 @@
+// Footer styles
+
+footer#site-footer {
+		
+	position: 				relative;
+	
+	padding-top: 				$footer-padding-top * 6;
+	padding-bottom: 			$footer-padding-bottom * 6;
+				
+	@include xs {
+		padding-top: 			$footer-padding-top-xs * 10;
+		padding-bottom: 		$footer-padding-bottom-xs * 4;
+	}
+	@include sm {
+		padding-top: 			$footer-padding-top-sm * 10;
+		padding-bottom: 		$footer-padding-bottom-sm * 4;
+	}
+	@include md {
+		padding-top: 			$footer-padding-top-md * 10;
+		padding-bottom: 		$footer-padding-bottom-md * 4;
+	}
+	@include lg {
+		padding-top: 			$footer-padding-top-lg * 10;
+		padding-bottom: 		$footer-padding-bottom-lg * 4;
+	}
+	@include xl {
+		padding-top: 			$footer-padding-top-xl * 10;
+		padding-bottom: 		$footer-padding-bottom-xl * 4;
+	}	
+
+	section {
+		
+		p {
+			display: block;
+			
+			@include xs {
+				font-size: 		$footer-font-size-base-xs;
+				line-height: 	$footer-line-height-base-xs;
+				padding-top: 		$footer-padding-top-xs;
+				padding-bottom: 	$footer-padding-bottom-xs;
+			}
+			@include sm {
+				font-size: 		$footer-font-size-base-sm;
+				line-height: 	$footer-line-height-base-sm;
+				padding-top: 		$footer-padding-top-sm;
+				padding-bottom: 	$footer-padding-bottom-sm;
+			}
+			@include md {
+				font-size: 		$footer-font-size-base-md;
+				line-height: 	$footer-line-height-base-md;
+				padding-top: 		$footer-padding-top-md;
+				padding-bottom: 	$footer-padding-bottom-md;
+			}
+			@include lg {
+				font-size: 		$footer-font-size-base-lg;
+				line-height: 	$footer-line-height-base-lg;
+				padding-top: 		$footer-padding-top-lg;
+				padding-bottom: 	$footer-padding-bottom-lg;
+			}
+			@include xl {
+				font-size: 		$footer-font-size-base-xl;
+				line-height: 	$footer-line-height-base-xl;
+				padding-top: 		$footer-padding-top-xl;
+				padding-bottom: 	$footer-padding-bottom-xl;
+			}
+			
+			font-weight:		$footer-font-weight;
+			
+			&.footer-wordmark {
+				font-weight:		$footer-wordmark-font-weight;
+			}
+		}
+		
+		a {
+				
+			color:			$footer-color;
+			
+			/* Text and background color for dark mode */
+			@media (prefers-color-scheme: dark) {
+			    color: 		$footer-color-dark-mode;
+			}
+
+			text-decoration: 		$footer-text-decoration;
+		
+			&:hover,
+			&:focus {
+				color:				$footer-color-hover;
+				text-decoration: 	$footer-text-decoration-hover;
+			}
+			
+		}
+		
+	}
+
+	
+}

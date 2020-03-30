@@ -1,0 +1,332 @@
+// Home page styles
+
+// Loop page styles
+
+body#about {
+	
+	section#page-content > section {
+		
+		@include xs {
+			padding-bottom: 	0;
+		}
+		@include sm {
+			padding-bottom: 	0;
+		}
+		@include md {
+			padding-bottom: 	$p-padding-bottom-md * 1.5;
+		}
+		@include lg {
+			padding-bottom: 	$p-padding-bottom-lg * 1.5;
+		}
+		@include xl {
+			padding-bottom: 	$p-padding-bottom-xl * 1.5;
+		}
+		
+		@include clearfix;
+	}
+				
+	h1.page-title {
+		@include xs {
+			font-size: 		$h1-font-size-base-xs;
+		}
+		@include sm {
+			font-size: 		$h1-font-size-base-sm;
+		}
+		@include md {
+			font-size: 		$h1-font-size-base-md;
+		}
+		@include lg {
+			font-size: 		$h1-font-size-base-lg * 2;
+			line-height: 	$h1-line-height-base-lg * 2;
+		}
+		@include xl {
+			font-size: 		$h1-font-size-base-xl * 1.5;
+			line-height: 	$h1-line-height-base-xl * 1.5;
+		}
+	}
+				
+	h2.loop-header {
+		
+		text-align: 		left;
+		
+		@include sm-up {
+			float: 			left;
+		}
+		
+		@include xs {
+			font-size: 		$h2-font-size-base-xs * 1.25;
+			line-height: 		$p-line-height-base-xs * 1.4;
+			padding-top:	$h2-padding-top-xs / 3;
+		}
+		
+		@include sm-up {
+			width: 				30%;
+			padding-top: 		0;
+		}
+		
+		@include sm {
+			font-size: 			$p-font-size-base-sm * 1.4;
+			line-height: 		$p-line-height-base-sm * 1.4;
+		}
+		
+		@include md {
+			font-size: 			$p-font-size-base-md * 1.4;
+			line-height: 		$p-line-height-base-md * 1.4;
+		}
+		
+		@include lg {
+			font-size: 			$p-font-size-base-lg * 1.4;
+			line-height: 		$p-line-height-base-lg * 1.4;
+		}
+		
+		@include xl {
+			font-size: 			$p-font-size-base-xl * 1.4;
+			line-height: 		$p-line-height-base-xl * 1.4;
+		}
+		
+	}
+	
+	ul.about {
+		
+		padding-left: 0;
+		
+		li:before {
+			position: 		absolute;
+		    content: 		none;
+		    
+		    left: 			0;
+		}
+		
+		p.about-job-title {
+			
+			font-weight: 		bold !important;
+			
+			padding-bottom: 0;
+		
+		}
+		
+		p.about-notes {
+			font-style: 	italic;
+			
+			padding-bottom: 0;
+			
+			@include xs {
+				font-size: 		$p-font-size-base-xs * 0.75;
+				line-height: 	$p-line-height-base-xs * 0.75;
+			}
+			@include sm {
+				font-size: 		$p-font-size-base-sm * 0.75;
+				line-height: 	$p-line-height-base-sm * 0.75;
+			}
+			@include md {
+				font-size: 		$p-font-size-base-md * 0.75;
+				line-height: 	$p-line-height-base-md * 0.75;
+			}
+			@include lg {
+				font-size: 		$p-font-size-base-lg * 0.75;
+				line-height: 	$p-line-height-base-lg * 0.75;
+			}
+			@include xl {
+				font-size: 		$p-font-size-base-xl * 0.75;
+				line-height: 	$p-line-height-base-xl * 0.75;
+			}
+		}	
+		
+		p.about-organisation {
+			
+			padding-bottom: 0;
+			
+			a {
+				text-decoration: none;
+				
+				&:hover,
+				&:focus {
+					text-decoration: underline;
+				}
+			}
+			
+		}
+		
+		p.about-time {
+			font-style: 	italic;
+		}	
+		
+		@include md-up {
+			float: 			left;
+		}
+		
+		@include md {
+			width: 			60%;
+		}
+		@include lg {
+			width: 			60%;
+		}
+		@include xl {
+			width: 			60%;
+		}	
+		
+	}		
+	
+}
+
+body#projects {
+	
+	section#page-content > section {
+		
+		@include xs {
+			padding-bottom: 	0;
+		}
+		@include sm {
+			padding-bottom: 	0;
+		}
+		@include md {
+			padding-bottom: 	$p-padding-bottom-md * 1.5;
+		}
+		@include lg {
+			padding-bottom: 	$p-padding-bottom-lg * 1.5;
+		}
+		@include xl {
+			padding-bottom: 	$p-padding-bottom-xl * 1.5;
+		}
+		
+		@include clearfix;
+	}
+				
+	h1.page-title {
+		@include xs {
+			font-size: 		$h1-font-size-base-xs;
+		}
+		@include sm {
+			font-size: 		$h1-font-size-base-sm;
+		}
+		@include md {
+			font-size: 		$h1-font-size-base-md;
+		}
+		@include lg {
+			font-size: 		$h1-font-size-base-lg * 2;
+			line-height: 	$h1-line-height-base-lg * 2;
+		}
+		@include xl {
+			font-size: 		$h1-font-size-base-xl * 1.5;
+			line-height: 	$h1-line-height-base-xl * 1.5;
+		}
+	}
+				
+	h2.loop-header {
+		
+		text-align: 		left;
+		
+		@include sm-up {
+			float: 			left;
+		}
+		
+		@include xs {
+			font-size: 		$h2-font-size-base-xs * 1.25;
+			line-height: 		$p-line-height-base-xs * 1.4;
+			padding-top:	$h2-padding-top-xs / 3;
+		}
+		
+		@include sm-up {
+			width: 				30%;
+			padding-top: 		0;
+		}
+		
+		@include sm {
+			font-size: 			$p-font-size-base-sm * 1.4;
+			line-height: 		$p-line-height-base-sm * 1.4;
+		}
+		
+		@include md {
+			font-size: 			$p-font-size-base-md * 1.4;
+			line-height: 		$p-line-height-base-md * 1.4;
+		}
+		
+		@include lg {
+			font-size: 			$p-font-size-base-lg * 1.4;
+			line-height: 		$p-line-height-base-lg * 1.4;
+		}
+		
+		@include xl {
+			font-size: 			$p-font-size-base-xl * 1.4;
+			line-height: 		$p-line-height-base-xl * 1.4;
+		}
+		
+					
+	}
+	
+	ul.projects {
+		
+		padding-left: 0;
+		
+		li:before {
+			position: 		absolute;
+		    content: 		none;
+		    
+		    left: 			0;
+		}
+		
+		p.projects-title {
+			
+			padding-bottom: 0;
+			
+			@include xs {
+				font-size: 			$p-font-size-base-xs * 1.4;
+				line-height: 		$p-line-height-base-xs * 1.4;
+			}
+			
+			@include sm {
+				font-size: 			$p-font-size-base-sm * 1.4;
+				line-height: 		$p-line-height-base-sm * 1.4;
+			}
+			
+			@include md {
+				font-size: 			$p-font-size-base-md * 1.4;
+				line-height: 		$p-line-height-base-md * 1.4;
+			}
+			
+			@include lg {
+				font-size: 			$p-font-size-base-lg * 1.4;
+				line-height: 		$p-line-height-base-lg * 1.4;
+			}
+			
+			@include xl {
+				font-size: 			$p-font-size-base-xl * 1.4;
+				line-height: 		$p-line-height-base-xl * 1.4;
+			}
+			
+			a {
+				color:		$cyan;
+				text-decoration: none;
+				
+				&:hover,
+				&:focus {
+					text-decoration: underline;
+				}
+			}
+			
+		}
+		
+		p.projects-notes {			
+
+		}	
+				
+		@include sm-up {
+			float: 			left;
+		}
+		
+		@include sm {
+			width: 			70%;
+		}
+		@include md {
+			width: 			70%;
+		}
+		@include lg {
+			width: 			70%;
+		}
+		@include xl {
+			width: 			70%;
+		}	
+		
+	}		
+	
+}

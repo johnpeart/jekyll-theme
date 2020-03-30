@@ -1,0 +1,80 @@
+---
+layout: page
+---
+
+<section>
+		
+	<h2 class="loop-header">Career</h2>
+	
+	<ul class="about">
+		
+		{% for about in site.data.about %}
+		
+		{% if about.category == "Career" %}
+		
+		<li>
+			<p class="about-job-title">{{ about.jobtitle | smartify }}</p>
+			<p class="about-organisation"><a href="{{ about.url }}" title="Visit {{ about.organisation }}'s website">{{ about.organisation | smartify }}</a></p>
+			<p class="about-time">{{ about.time }}</p>
+		</li>
+		
+		{% endif %}
+		
+		{% endfor %}
+	
+	</ul>
+	
+</section>
+		
+<section>
+		
+	<h2 class="loop-header">Volunteering</h2>
+	
+	<ul class="about">
+		
+		{% for about in site.data.about %}
+		
+		{% if about.category == "Volunteering" %}
+		
+		<li>
+			<p class="about-job-title">{{ about.jobtitle | smartify }}</p>
+			<p class="about-organisation"><a href="{{ about.url }}" title="Visit {{ about.organisation }}'s website">{{ about.organisation | smartify }}</a></p>
+			<p class="about-time">{{ about.time }}</p>
+		</li>
+		
+		{% endif %}
+		
+		{% endfor %}
+	
+	</ul>
+	
+</section>
+	
+<section>
+		
+	<h2 class="loop-header">Education</h2>
+	
+	<ul class="about">
+		
+		{% for about in site.data.about %}
+		
+		{% if about.category == "Education" %}
+		
+		<li>
+			<p class="about-job-title">{{ about.jobtitle | smartify }}</p>
+			<p class="about-notes">{{ about.notes | smartify }}</p>
+			<p class="about-organisation"><a href="{{ about.url }}" title="Visit {{ about.organisation }}'s website">{{ about.organisation | smartify }}</a></p>
+			<p class="about-time">{{ about.time }}</p>
+		</li>
+		
+		{% endif %}
+		
+		{% endfor %}
+	
+	</ul>
+	
+</section>
+
+
+
+

@@ -1,0 +1,183 @@
+// Loop page styles
+
+body#loop {
+	
+	section#page-content > section {
+		
+		@include xs {
+			padding-bottom: 	0;
+		}
+		@include sm {
+			padding-bottom: 	0;
+		}
+		@include md {
+			padding-bottom: 	$p-padding-bottom-md * 1.5;
+		}
+		@include lg {
+			padding-bottom: 	$p-padding-bottom-lg * 1.5;
+		}
+		@include xl {
+			padding-bottom: 	$p-padding-bottom-xl * 1.5;
+		}
+		
+		@include clearfix;
+	}
+				
+	h1.page-title {
+		@include xs {
+			font-size: 		$h1-font-size-base-xs;
+		}
+		@include sm {
+			font-size: 		$h1-font-size-base-sm;
+		}
+		@include md {
+			font-size: 		$h1-font-size-base-md;
+		}
+		@include lg {
+			font-size: 		$h1-font-size-base-lg * 2;
+			line-height: 	$h1-line-height-base-lg * 2;
+		}
+		@include xl {
+			font-size: 		$h1-font-size-base-xl * 1.5;
+			line-height: 	$h1-line-height-base-xl * 1.5;
+		}
+	}
+				
+	h2.loop-header {
+		
+		text-align: 		left;
+		
+		@include md-up {
+		@include supports-sticky {
+			@include md {
+				top: 				$p-line-height-base-md + $header-padding-bottom-md + $header-padding-top-md;
+				padding-bottom: 	$p-padding-bottom-md * 2.5;
+			}
+			
+			@include lg {
+				top: 				$p-line-height-base-lg + $header-padding-bottom-lg + $header-padding-top-lg;
+				padding-bottom: 	$p-padding-bottom-lg * 2.5;
+			}
+			
+			@include xl {
+				top: 				$p-line-height-base-xl + $header-padding-bottom-xl + $header-padding-top-xl;
+				padding-bottom: 	$p-padding-bottom-xl * 2.5;
+			}
+		}
+		}
+		@include xs {
+			font-size: 		$h2-font-size-base-xs * 1.25;
+			padding-top:	$h2-padding-top-xs / 3;
+		}
+		
+		@include sm-up {
+			float: 			left;
+		}
+		
+		@include sm {
+			width: 			20%;
+			font-size: 		$p-line-height-base-sm * 1.25 !important;
+			line-height: 	$p-font-size-base-sm * 1.4 !important;
+			padding-top:	0;
+		}
+		@include md {
+			width: 			25%;
+			
+			font-size: 		$p-line-height-base-md * 1.5 !important;
+			line-height: 	$p-font-size-base-md * 1.5 !important;
+			padding-top:	0;
+		}
+		@include lg {
+			width: 			25%;
+			
+			font-size: 		$p-line-height-base-lg * 1.5 !important;
+			line-height: 	$p-font-size-base-lg * 1.5 !important;
+			padding-top:	0;
+		}
+		@include xl {
+			width: 			25%;
+			
+			font-size: 		$p-line-height-base-xl * 1.5 !important;
+			line-height: 	$p-font-size-base-xl * 1.5 !important;
+			padding-top:	0;
+		}			
+	}
+	
+	ul.loop {
+		
+		padding-left: 0;
+		
+		li:before {
+			position: 		absolute;
+		    content: 		none;
+		    
+		    left: 			0;
+		}
+		
+		p.loop-item-date {
+			padding-bottom: 0;
+			
+			time {
+				font-weight: 	bold;
+			}
+		}
+		
+		p.loop-item-title {
+			
+			a {
+				color: 				$cyan;
+				text-decoration: 	none;
+				
+				&:hover,
+				&:focus {
+					text-decoration: underline;
+				}
+			}
+			
+			@include xs {
+				font-size: 			$p-font-size-base-xs * 1.2;
+				padding-bottom: 	$p-padding-bottom-xs * 1.5;
+			}
+			
+			@include sm {
+				font-size: 			$p-font-size-base-sm * 1.2;
+				padding-bottom: 	$p-padding-bottom-sm * 1.5;
+			}
+			
+			@include md {
+				font-size: 			$p-font-size-base-md * 1.2;
+				padding-bottom: 	$p-padding-bottom-md * 1.5;
+			}
+			
+			@include lg {
+				font-size: 			$p-font-size-base-lg * 1.2;
+				padding-bottom: 	$p-padding-bottom-lg * 1.5;
+			}
+			
+			@include xl {
+				font-size: 			$p-font-size-base-xl * 1.2;
+				padding-bottom: 	$p-padding-bottom-xl * 1.5;
+			}
+			
+		}
+		
+		@include sm-up {
+			float: 			left;
+		}
+		
+		@include sm {
+			width: 			80%;
+		}
+		@include md {
+			width: 			75%;
+		}
+		@include lg {
+			width: 			75%;
+		}
+		@include xl {
+			width: 			75%;
+		}		
+		
+	}		
+	
+}
