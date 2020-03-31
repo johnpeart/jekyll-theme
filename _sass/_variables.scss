@@ -260,6 +260,43 @@ $h1-text-align:						left;
 $h1-text-decoration:					none;
 $h1-text-transform:					none;
 
+// H1 TEXT SIZES & SPACING
+// 404 PAGE ONLY
+
+$h1-404-font-size-base:					$p-font-size-base * 2;
+$h1-404-font-size-base-xs:				$h1-404-font-size-base;
+$h1-404-font-size-base-sm:				$p-font-size-base-sm * 2.75;
+$h1-404-font-size-base-md:				$p-font-size-base-md * 2.75;
+$h1-404-font-size-base-lg:				$p-font-size-base-lg * 2.75;
+$h1-404-font-size-base-xl:				$p-font-size-base-xl * 2.75;
+
+$h1-404-line-height-base:				$h1-404-font-size-base * 0.9;
+$h1-404-line-height-base-xs:				$h1-404-line-height-base;
+$h1-404-line-height-base-sm:				$h1-404-font-size-base-sm;
+$h1-404-line-height-base-md:				$h1-404-font-size-base-md;
+$h1-404-line-height-base-lg:				$h1-404-font-size-base-lg;
+$h1-404-line-height-base-xl:				$h1-404-font-size-base-xl;
+
+$h1-404-padding-top:						$h1-404-font-size-base * 2;
+$h1-404-padding-top-xs:					$h1-404-font-size-base-xs * 2;
+$h1-404-padding-top-sm:					$h1-404-font-size-base-sm * 2;
+$h1-404-padding-top-md:					$h1-404-font-size-base-md * 2;
+$h1-404-padding-top-lg:					$h1-404-font-size-base-lg * 2;
+$h1-404-padding-top-xl:					$h1-404-font-size-base-xl * 2;
+
+$h1-404-padding-bottom:					$h1-404-font-size-base;
+$h1-404-padding-bottom-xs:				$h1-404-font-size-base-xs;
+$h1-404-padding-bottom-sm:				$h1-404-font-size-base-sm;
+$h1-404-padding-bottom-md:				$h1-404-font-size-base-md;
+$h1-404-padding-bottom-lg:				$h1-404-font-size-base-lg;
+$h1-404-padding-bottom-xl:				$h1-404-font-size-base-xl;
+
+$h1-404-font-weight:						bold;
+$h1-404-font-style:						normal;
+$h1-404-text-align:						left;
+$h1-404-text-decoration:					none;
+$h1-404-text-transform:					none;
+
 // h2 TEXT SIZES & SPACING
 
 $h2-font-size-base:					$p-font-size-base + 5px;
