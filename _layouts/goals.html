@@ -62,8 +62,25 @@ layout: default
 				
 				{% endfor %}	
 								
-				{% include totaliser.html %}
-			
+
+				
+				<li class="totaliser">
+					<h2>Overall progress</h2>
+					<p class="lead">Goal completion</p>
+					<progress max="100" value="{{ goalpercentage | divided_by: goalno }}">
+						<p><strong>{{ goalpercentage | divided_by: goalno | floor }}% of goals completed (each goal given equal weighting)</strong></p>
+					</progress>
+					<p>{{ goalpercentage | divided_by: goalno | floor }}% of goals completed (each goal given equal weighting)</p>
+					
+					{% if goalsdata contains currentyear %}
+					<p class="lead">Year to date</p>
+					<progress max="365" value="{{ dayoftheyear }}">
+						<p>Day <strong>{{ dayoftheyear }}</strong> out of <strong>365</strong></p>
+					</progress>
+					<p>Progress against my goals was last updated on the {{ "now" | date: "%-d %B" }}.</p>
+					{% endif %}
+				</li>
+							
 			</ul>
 
 							
