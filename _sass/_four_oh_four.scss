@@ -6,7 +6,7 @@ body#four-oh-four {
 		
 		max-width: 	750px;
 
-		h1 {
+		h1.colophon-heading {
 			@include xs {
 				font-size: 		$h1-404-font-size-base-xs * 1.5;	
 				line-height:	$h1-404-line-height-base-xs * 1.5;
