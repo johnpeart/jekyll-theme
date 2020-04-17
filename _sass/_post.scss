@@ -42,6 +42,29 @@ body#post {
 				
 				font-weight:		bold;
 		}
+
+		ul > li::before {
+			position: absolute;
+			content: "–";
+   
+			 left: $p-font-size-base;
+   
+			 @include xs {	    
+				left: $p-font-size-base-xs;
+			}
+			@include sm {	    
+				left: -($p-font-size-base-sm / 2);
+			}
+			@include md {	    
+				left: -($p-font-size-base-md / 2);
+			}
+			@include lg {	    
+				left: -($p-font-size-base-lg / 2);
+			}
+			@include xl {	    
+				left: -($p-font-size-base-xl / 2);
+			}
+		}
 		
 		ul#markdown-toc {
 			
