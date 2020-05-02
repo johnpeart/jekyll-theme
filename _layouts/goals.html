@@ -43,9 +43,19 @@ layout: default
 								
 						<h2>{{ goals.goal }}</h2>
 						<p class="lead">{{ goals.description }}</p>
-						<progress max="{{ goals.max }}" value="{{ goals.progress }}">
+
+						{% if goals.stretch %}
+						<progress class="standard" max="{{ goals.max }}" value="{{ goals.progress }}">
+							<p><strong>{{ goals.progress | remove: ".0" }}</strong> out of an initial goal of <strong>{{ goals.max | remove: ".0" }}</strong></p>
+						</progress>
+						<progress class="extra" max="{{ goals.stretch }}" value="{{ goals.progress }}">
+							<p><strong>{{ goals.progress | minus: goals.max | remove: ".0" }}</strong> out of a stretch goal of <strong>{{ goals.stretch | remove: ".0" }}</strong></p>
+						</progress>
+						{% else %}
+						<progress class="standard" max="{{ goals.max }}" value="{{ goals.progress }}">
 							<p><strong>{{ goals.progress | remove: ".0" }}</strong> out of <strong>{{ goals.max | remove: ".0" }}</strong></p>
 						</progress>
+						{% endif %}
 								
 						{% if goals.comment != "" %}<p>{{ goals.comment }}</p>{% endif %}
 					
