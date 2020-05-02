@@ -59,7 +59,7 @@ layout: default
 					
 					</li>
 							
-					{% assign goalvalue = goals.progress | divided_by: goals.max | times: 100 %}
+					{% capture goalvalue %}{{ goals.progress | divided_by: goals.max | times: 100 % }}{% endcapture %}
 
 					<!-- debugging output -->
 					<!-- Goal description: {{ goal.description }} -->
