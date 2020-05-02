@@ -6,10 +6,10 @@ layout: default
 		
 <main id="content" class="container">
 
-	{% assign goalmax = 0 %}
-	{% assign goalprogress = 0 %}
+	{% assign totalgoalmax = 0 %}
+	{% assign totalgoalprogress = 0 %}
 	{% assign goalno = 0 %}
-	{% assign goalpercentage = 0 %}
+	{% assign totalgoalpercentage = 0 %}
 	{% assign dayoftheyear = "now" | date: "%j" %}
 	{% assign currentyear = "now" | date: "%Y" | plus: 0 %}
 
@@ -58,22 +58,24 @@ layout: default
 						{% if goals.comment != "" %}<p>{{ goals.comment }}</p>{% endif %}
 					
 					</li>
+
+					{% assign goalprogress = goals.progress | times: 1 %}
+					{% assign goalmax = goals.max | times: 1 %}
 							
-					{% capture goalvalue %}{{ goals.progress | divided_by: goals.max | times: 100 }}{% endcapture %}
-					{% assign goalvalue = goalvalue | times: 1 %}
+					{% assign goalvalue = goalprogress | divided_by: goalmax | times: 100 %}
 
 					<!-- debugging output -->
 					<!-- Goal description: {{ goals.description }} -->
 					<!-- Goal value: {{ goalvalue }} = Goal progress: {{ goals.progress }} | divided_by: Goal max: {{ goals.max }} | times: 100 -->
 
-					{% capture goalmax %}{{ goalmax | plus: goals.max | floor }}{% endcapture %}
-					{% capture goalprogress %}{{ goalprogress | plus: goals.progress }}{% endcapture %}
+					{% capture totalgoalmax %}{{ totalgoalmax | plus: goals.max | floor }}{% endcapture %}
+					{% capture totalgoalprogress %}{{ totalgoalprogress | plus: goals.progress }}{% endcapture %}
 					{% if goalvalue >= 80 %}
-						{% capture goalpercentage %}{{ goalpercentage | plus: 100 | floor }}{% endcapture %}
-					<!-- Goal value greater than or equal to 80% so goal percentage set to {{ goalpercentage }} -->
+						{% capture totalgoalpercentage %}{{ totalgoalpercentage | plus: 100 | floor }}{% endcapture %}
+					<!-- Goal value greater than or equal to 80% so goal percentage set to {{ totalgoalpercentage }} -->
 					{% else %}
-						{% capture goalpercentage %}{{ goalpercentage | plus: goalvalue | floor }}{% endcapture %}
-					<!-- Goal value less than 80% so goal percentage set to {{ goalpercentage }} -->
+						{% capture totalgoalpercentage %}{{ totalgoalpercentage | plus: goalvalue | floor }}{% endcapture %}
+					<!-- Goal value less than 80% so goal percentage set to {{ totalgoalpercentage }} -->
 					{% endif %}
 					{% capture goalno %}{{ goalno | plus: 1 }}{% endcapture %}
 					<!-- Goal number {{goalno }} complete -->
@@ -85,10 +87,10 @@ layout: default
 				<li class="totaliser">
 					<h2>Overall progress</h2>
 					<p class="lead">Goal completion</p>
-					<progress max="100" value="{{ goalpercentage | divided_by: goalno }}">
-						<p><strong>{{ goalpercentage | divided_by: goalno | floor }}% of goals completed (each goal given equal weighting)</strong></p>
+					<progress max="100" value="{{ totalgoalpercentage | divided_by: goalno }}">
+						<p><strong>{{ totalgoalpercentage | divided_by: goalno | floor }}% of goals completed (each goal given equal weighting)</strong></p>
 					</progress>
-					<p>{{ goalpercentage | divided_by: goalno | floor }}% of goals completed (each goal given equal weighting)</p>
+					<p>{{ totalgoalpercentage | divided_by: goalno | floor }}% of goals completed (each goal given equal weighting)</p>
 					
 					{% if goalsdata contains currentyear %}
 					<p class="lead">Year to date</p>
