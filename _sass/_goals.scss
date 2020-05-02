@@ -49,10 +49,17 @@ body#goals {
 						appearance: none;
 						
 				width: 		100%;
-				height: 	10px;
+				height: 	15px;
 				
 				padding: 	0;
 				margin: 	20px 0;
+
+				&.standard {
+					margin-bottom: 0;
+				}
+				&.stretch {
+					margin-top: 0;
+				}
 				
 				&::-webkit-progress-bar {
 					background-color: 	$gray-200;
