@@ -62,7 +62,7 @@ layout: default
 					{% capture goalvalue %}{{ goals.progress | divided_by: goals.max | times: 100 % }}{% endcapture %}
 
 					<!-- debugging output -->
-					<!-- Goal description: {{ goal.description }} -->
+					<!-- Goal description: {{ goals.description }} -->
 					<!-- Goal value: {{ goalvalue }} = Goal progress: {{ goals.progress }} | divided_by: Goal max: {{ goals.max }} | times: 100 -->
 
 					{% capture goalmax %}{{ goalmax | plus: goals.max | floor }}{% endcapture %}
