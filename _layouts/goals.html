@@ -44,7 +44,7 @@ layout: default
 						<h2>{{ goals.goal }}</h2>
 						<p class="lead">{{ goals.description }}</p>
 
-						{% if goals.stretch %}
+						{% if goals.stretch and goals.stretch > 0 %}
 						<progress class="standard" max="{{ goals.max }}" value="{{ goals.progress }}">
 							<p><strong>{{ goals.progress | remove: ".0" }}</strong> out of an initial goal of <strong>{{ goals.max | remove: ".0" }}</strong></p>
 						</progress>
