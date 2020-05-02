@@ -48,11 +48,11 @@ layout: default
 						<progress class="standard" max="{{ goals.max }}" value="{{ goals.progress }}">
 							<p><strong>{{ goals.progress | remove: ".0" }}</strong> out of an initial goal of <strong>{{ goals.max | remove: ".0" }}</strong></p>
 						</progress>
-						<progress class="extra" max="{{ goals.stretch }}" value="{{ goals.progress | minus: goals.max | at_least: 0 }}">
+						<progress class="stretch" max="{{ goals.stretch }}" value="{{ goals.progress | minus: goals.max | at_least: 0 }}">
 							<p><strong>{{ goals.progress | minus: goals.max | remove: ".0" | at_least: 0 }}</strong> out of a stretch goal of <strong>{{ goals.stretch | remove: ".0" }}</strong></p>
 						</progress>
 						{% else %}
-						<progress class="standard" max="{{ goals.max }}" value="{{ goals.progress }}">
+						<progress max="{{ goals.max }}" value="{{ goals.progress }}">
 							<p><strong>{{ goals.progress | remove: ".0" }}</strong> out of <strong>{{ goals.max | remove: ".0" }}</strong></p>
 						</progress>
 						{% endif %}
