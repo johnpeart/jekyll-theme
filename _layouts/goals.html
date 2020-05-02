@@ -60,22 +60,14 @@ layout: default
 					</li>
 							
 					{% assign goalvalue = goals.progress | divided_by: goals.max | times: 100 %}
-
-					<!-- debugging output -->
-					<!-- Goal description: {{ goals.description }} -->
-					<!-- Goal value: {{ goalvalue }} = Goal progress: {{ goals.progress }} | divided_by: Goal max: {{ goals.max }} | times: 100 -->
-
 					{% capture totalgoalmax %}{{ totalgoalmax | plus: goals.max | floor }}{% endcapture %}
 					{% capture totalgoalprogress %}{{ totalgoalprogress | plus: goals.progress }}{% endcapture %}
 					{% if goalvalue >= 80 %}
 						{% capture totalgoalpercentage %}{{ totalgoalpercentage | plus: 100 | floor }}{% endcapture %}
-					<!-- Goal value greater than or equal to 80% so goal percentage set to {{ totalgoalpercentage }} -->
 					{% else %}
 						{% capture totalgoalpercentage %}{{ totalgoalpercentage | plus: goalvalue | floor }}{% endcapture %}
-					<!-- Goal value less than 80% so goal percentage set to {{ totalgoalpercentage }} -->
 					{% endif %}
 					{% capture goalno %}{{ goalno | plus: 1 }}{% endcapture %}
-					<!-- Goal number {{goalno }} complete -->
 				
 				{% endfor %}	
 								
