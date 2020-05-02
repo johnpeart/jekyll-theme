@@ -36,9 +36,7 @@ layout: default
 			<ul id="goals-list">
 			
 				{% for goals in site.data[goalsdata] %}
-						
-					{% assign goalvalue = goals.progress | divided_by: goals.max | times: 100 %}
-				
+										
 					<li>
 								
 						<h2>{{ goals.goal }}</h2>
@@ -61,14 +59,23 @@ layout: default
 					
 					</li>
 							
+					{% assign goalvalue = goals.progress | divided_by: goals.max | times: 100 %}
+
+					<!-- debugging output -->
+					<!-- Goal description: {{ goal.description }} -->
+					<!-- Goal value: {{ goalvalue }} = Goal progress: {{ goals.progress }} | divided_by: Goal max: {{ goals.max }} | times: 100 -->
+
 					{% capture goalmax %}{{ goalmax | plus: goals.max | floor }}{% endcapture %}
 					{% capture goalprogress %}{{ goalprogress | plus: goals.progress }}{% endcapture %}
 					{% if goalvalue >= 80 %}
 						{% capture goalpercentage %}{{ goalpercentage | plus: 100 | floor }}{% endcapture %}
+					<!-- Goal value greater than or equal to  80% so goal percentage set to {{ goalpercentage }} -->
 					{% else %}
 						{% capture goalpercentage %}{{ goalpercentage | plus: goalvalue | floor }}{% endcapture %}
+					<!-- Goal value less than 80% so goal percentage set to {{ goalpercentage }} -->
 					{% endif %}
 					{% capture goalno %}{{ goalno | plus: 1 }}{% endcapture %}
+					<!-- Goal number {{goalno }} complete -->
 				
 				{% endfor %}	
 								
