@@ -42,17 +42,15 @@ layout: default
 						<h2>{{ goals.goal }}</h2>
 						<p class="lead">{{ goals.description }}</p>
 
-						{% if goals.stretch %}
-							<progress class="standard" max="{{ goals.max }}" value="{{ goals.progress }}">
+						{% if goals.progress >= goals.max and goals.stretch  %}
+							<progress class="stretch-top" max="{{ goals.max }}" value="{{ goals.progress }}">
 								<p><strong>{{ goals.progress | remove: ".0" }}</strong> out of an initial goal of <strong>{{ goals.max | remove: ".0" }}</strong></p>
 							</progress>
-							{% if goals.stretch > 0.0 %}
-								<progress class="stretch" max="{{ goals.stretch }}" value="{{ goals.progress | minus: goals.max | at_least: 0 }}">
-									<p><strong>{{ goals.progress | minus: goals.max | remove: ".0" | at_least: 0 }}</strong> out of a stretch goal of <strong>{{ goals.stretch | remove: ".0" }}</strong></p>
-								</progress>
-							{% endif %}
+							<progress class="stretch-bottom" max="{{ goals.stretch }}" value="{{ goals.progress | minus: goals.max | at_least: 0 }}">
+								<p><strong>{{ goals.progress | minus: goals.max | remove: ".0" | at_least: 0 }}</strong> out of a stretch goal of <strong>{{ goals.stretch | remove: ".0" }}</strong></p>
+							</progress>
 						{% else %}
-							<progress max="{{ goals.max }}" value="{{ goals.progress }}">
+							<progress class="standard" max="{{ goals.max }}" value="{{ goals.progress }}">
 								<p><strong>{{ goals.progress | remove: ".0" }}</strong> out of <strong>{{ goals.max | remove: ".0" }}</strong></p>
 							</progress>
 						{% endif %}
@@ -86,14 +84,14 @@ layout: default
 				<li class="totaliser">
 					<h2>Overall progress</h2>
 					<p class="lead">Goal completion</p>
-					<progress max="100" value="{{ totalgoalpercentage | divided_by: goalno }}">
+					<progress class="standard" max="100" value="{{ totalgoalpercentage | divided_by: goalno }}">
 						<p><strong>{{ totalgoalpercentage | divided_by: goalno | floor }}% of goals completed (each goal given equal weighting)</strong></p>
 					</progress>
 					<p>{{ totalgoalpercentage | divided_by: goalno | floor }}% of goals completed (each goal given equal weighting)</p>
 					
 					{% if goalsdata contains currentyear %}
 					<p class="lead">Year to date</p>
-					<progress max="365" value="{{ dayoftheyear }}">
+					<progress class="standard" max="365" value="{{ dayoftheyear }}">
 						<p>Day <strong>{{ dayoftheyear }}</strong> out of <strong>365</strong></p>
 					</progress>
 					<p>Progress against my goals was last updated on the {{ "now" | date: "%-d %B" }}.</p>

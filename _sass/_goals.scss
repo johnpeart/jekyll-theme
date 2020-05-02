@@ -45,39 +45,92 @@ body#goals {
 	
 			progress[value] {
 				
+				position: relative;
+				display: block;
+
 				-webkit-appearance: none;
 						appearance: none;
 						
 				width: 		100%;
-				height: 	15px;
 				
 				padding: 	0;
 				margin: 	20px 0;
-				
-				&::-webkit-progress-bar {
-					background-color: 	$gray-200;
-					@include dark-mode {
-						background: 	$gray-700;
-					}
-					border: 			none;
-					border-radius: 		2px;
-				}
-				
-				&::-webkit-progress-value {
-					background-color: 	$cyan;			
-					border-radius: 2px; 
-					background-size: 600px;
-				}
 
 				&.standard {
-					margin-bottom: 0;
+				
+					height: 	20px;
+
+					&::-webkit-progress-bar {
+						background-color: 	$gray-200;
+						@include dark-mode {
+							background: 	$gray-700;
+						}
+						border: 			none;
+						border-radius: 		2px;
+					}
+					
+					&::-webkit-progress-value {
+						background-color: 	$cyan;			
+						border-radius: 2px; 
+						background-size: 600px;
+					}
+
 				}
-				&.stretch {
+
+
+				&.stretch-top {
+
+					height: 10px;
+					margin-bottom: 0;
+
+					&::-webkit-progress-bar {
+						background-color: 	$gray-200;
+						@include dark-mode {
+							background: 	$gray-700;
+						}
+						border: 			none;			
+						border-top-left-radius: 2px; 
+						border-top-right-radius: 2px;			
+						border-bottom-left-radius: 0; 
+						border-bottom-right-radius: 0;
+					}
+					
+					&::-webkit-progress-value {
+						background-color: 	$cyan;			
+						border-top-left-radius: 2px; 
+						border-top-right-radius: 2px; 		
+						border-bottom-left-radius: 0; 
+						border-bottom-right-radius: 0;
+						background-size: 600px;
+					}
+
+				}
+				&.stretch-bottom {
+
+					height: 10px;
 					margin-top: 0;
 
-					&::-webkit-progress-value {
-						background-color: 	$purple;
+					&::-webkit-progress-bar {
+						background-color: 	$cyan;
+						@include dark-mode {
+							background: 	$cyan;
+						}
+						border: 			none;			
+						border-top-left-radius: 0; 
+						border-top-right-radius: 0; 	
+						border-bottom-left-radius: 2px; 
+						border-bottom-right-radius: 2px;
 					}
+					
+					&::-webkit-progress-value {
+						background-color: 	$purple;		
+						border-top-left-radius: 0; 
+						border-top-right-radius: 0; 		
+						border-bottom-left-radius: 2px; 
+						border-bottom-right-radius: 2px; 
+						background-size: 600px;
+					}
+
 				}
 				
 			}
