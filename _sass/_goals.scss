@@ -53,20 +53,13 @@ body#goals {
 				
 				padding: 	0;
 				margin: 	20px 0;
-
-				&.standard {
-					margin-bottom: 0;
-				}
-				&.stretch {
-					margin-top: 0;
-				}
 				
 				&::-webkit-progress-bar {
 					background-color: 	$gray-200;
 					@include dark-mode {
 						background: 	$gray-700;
 					}
-					border: 				none;
+					border: 			none;
 					border-radius: 		2px;
 				}
 				
@@ -74,6 +67,17 @@ body#goals {
 					background-color: 	$cyan;			
 					border-radius: 2px; 
 					background-size: 600px;
+				}
+
+				&.standard {
+					margin-bottom: 0;
+				}
+				&.stretch {
+					margin-top: 0;
+
+					&::-webkit-progress-value {
+						background-color: 	$purple;
+					}
 				}
 				
 			}
