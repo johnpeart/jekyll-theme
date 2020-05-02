@@ -42,7 +42,7 @@ layout: default
 						<h2>{{ goals.goal }}</h2>
 						<p class="lead">{{ goals.description }}</p>
 
-						{% if goals.stretch and goals.stretch > 0 %}
+						{% if goals.stretch and goals.stretch > 0.0 %}
 						<progress class="standard" max="{{ goals.max }}" value="{{ goals.progress }}">
 							<p><strong>{{ goals.progress | remove: ".0" }}</strong> out of an initial goal of <strong>{{ goals.max | remove: ".0" }}</strong></p>
 						</progress>
@@ -58,11 +58,8 @@ layout: default
 						{% if goals.comment != "" %}<p>{{ goals.comment }}</p>{% endif %}
 					
 					</li>
-
-					{% assign goalprogress = goals.progress | times: 1 %}
-					{% assign goalmax = goals.max | times: 1 %}
 							
-					{% assign goalvalue = goalprogress | divided_by: goalmax | times: 100 %}
+					{% assign goalvalue = goals.progress | divided_by: goals.max | times: 100 %}
 
 					<!-- debugging output -->
 					<!-- Goal description: {{ goals.description }} -->
