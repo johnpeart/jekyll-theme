@@ -1,0 +1,13 @@
+---
+---
+{
+    "name": "{{ site.title }}",
+    "short_name": "{{ site.title }}",
+    "icons": [{
+        "src": "{{ site.url | append: site.baseurl | append: site.favicon-google-png }}",
+        "sizes": "512x512"
+    }],
+    "background_color": "{{ site.theme-colour }}",
+    "theme_color": "{{ site.theme-colour }}",
+    "display": "fullscreen"
+}
