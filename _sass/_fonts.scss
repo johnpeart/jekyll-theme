@@ -9,6 +9,8 @@
 			url('../fonts/JPFont-Regular.woff2') format('woff2'),
 			url('../fonts/JPFont-Regular.woff') format('woff'),
 			url('../fonts/JPFont-Regular.ttf') format('truetype');
+
+	font-display: swap;
 }
 
 @font-face {
@@ -22,6 +24,8 @@
 			url('../fonts/JPFont-Italic.woff2') format('woff2'),
 			url('../fonts/JPFont-Italic.woff') format('woff'),
 			url('../fonts/JPFont-Italic.ttf') format('truetype');
+
+			font-display: swap;
 }
  
 @font-face {
@@ -35,6 +39,8 @@
 			url('../fonts/JPFont-Bold.woff2') format('woff2'),
 			url('../fonts/JPFont-Bold.woff') format('woff'),
 			url('../fonts/JPFont-Bold.ttf') format('truetype');
+
+			font-display: swap;
 }
  
 @font-face {
@@ -48,4 +54,6 @@
 			url('../fonts/JPFont-BoldItalic.woff2') format('woff2'),
 			url('../fonts/JPFont-BoldItalic.woff') format('woff'),
 			url('../fonts/JPFont-BoldItalic.ttf') format('truetype');
+
+			font-display: swap;
 }
