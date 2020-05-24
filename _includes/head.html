@@ -20,17 +20,17 @@
 	<meta name="google-site-verification" content="{{ site.google-site-verification }}"><!-- Google Search Console -->
 
 	<!-- Base URLS, duplicate URLs and feeds -->
-	<meta name="url" content="{{ site.url }}">
+	<meta name="url" content="{{ site.url | append: site.baseurl }}">
 	<base href="{{ site.url | append: site.baseurl | append: page.url }}">
 	<!-- Links to top level resource in an hierarchical structure -->
 	<link rel="index" href="{{ site.url | append: site.baseurl }}">
 	<link rel="canonical" href="{{ site.url | append: site.baseurl | append: page.url | replace: 'index.html','' }}">
-	<link rel="alternate" href="{{ site.url | append: '/feed.xml' }}" type="application/rss+xml" title="{{ site.title }}">
+	<link rel="alternate" href="{{ site.url | append: site.baseurl | append: '/feed.xml' }}" type="application/rss+xml" title="{{ site.title }}">
 	<!-- Links to a document that describes a collection of records, documents, or other materials of historical interest. -->
-	<link rel="archives" href="{{ site.url | append: '/archives' }}">
+	<link rel="archives" href="{{ site.url | append: site.baseurl | append: '/archives' }}">
 	
 	<!-- Gives information about the author -->
-	<link rel="me" href="{{ site.twitter-url }}" type="text/html">
+	{% if site.twitter-url %}<link rel="me" href="{{ site.twitter-url }}" type="text/html">{% endif %}
 	<link rel="me" href="{{ site.linkedin-url }}" type="text/html">
 	<link rel="me" href="{{ site.github-url }}" type="text/html">
 	<link rel="me" href="{{ site.flickr-url }}" type="text/html">
@@ -41,7 +41,7 @@
 	<meta property="og:url" 				content="{{ site.url | append: site.baseurl | append: page.url | replace: 'index.html','' }}">
 	<meta property="og:type" 			content="{% if page.layout == 'post' %}article{% else %}website{% endif %}" />
 	<meta property="og:title" 			content="{% if page.title %}{{ page.title | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.title }}{% endif %}">
-	<meta property="og:image" 			content="{% if page.image %}{{ site.url | append: site.social-images-path | append: page.image }}{% else %}{{ site.url | append: site.social-media-image }}{% endif %}">
+	<meta property="og:image" 			content="{% if page.image %}{{ site.url | append: site.baseurl | append: site.social-images-path | append: page.image }}{% else %}{{ site.url | append: site.baseurl | append: site.social-media-image }}{% endif %}">
 	<meta property="og:image:width" 		content="1200">
 	<meta property="og:image:height" 	content="630">
 	<meta property="og:rich_attachment" content="true" />
@@ -58,13 +58,13 @@
 	<meta name="twitter:url" 			content="{{ site.url | append: site.baseurl | append: page.url | replace: 'index.html','' }}">
 	<meta name="twitter:title" 			content="{% if page.title %}{{ page.title | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.title }}{% endif %}">
 	<meta name="twitter:description" 	content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description  | strip_html | strip_newlines | truncate: 160 }}{% endif %}">
-	<meta name="twitter:image" 			content="{% if page.image %}{{ site.url | append: site.social-images-path | append: page.image }}{% else %}{{ site.url | append: site.social-media-image }}{% endif %}">
+	<meta name="twitter:image" 			content="{% if page.image %}{{ site.url | append: site.baseurl | append: site.social-images-path | append: page.image }}{% else %}{{ site.url | append: site.baseurl | append: site.social-media-image }}{% endif %}">
 	<meta name="twitter:image:alt" 		content="{% if page.image-description %}{{ page.image-description | strip_html }}{% else %}{{ page.title }}{% endif %}">
 	
 	<!-- Schema.org settings -->
 	<meta itemprop="name" content="{% if page.title %}{{ page.title | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.title }}{% endif %}">
 	<meta itemprop="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description  | strip_html | strip_newlines | truncate: 160 }}{% endif %}">
-	<meta itemprop="image" content="{% if page.image %}{{ site.url | append: site.social-images-path | append: page.image }}{% else %}{{ site.url | append: site.social-media-image }}{% endif %}">	
+	<meta itemprop="image" content="{% if page.image %}{{ site.url | append: site.baseurl | append: site.social-images-path | append: page.image }}{% else %}{{ site.url | append: site.baseurl | append: site.social-media-image }}{% endif %}">	
 	
 	<!-- Favicons -->
 	<!-- Place favicon.ico in the root directory - no tag necessary -->
@@ -74,10 +74,10 @@
 	<link rel="apple-touch-icon" href="{{ site.url | append: site.baseurl | append: site.favicon-large-png }}">
 
 	<!-- CSS -->
-	<link rel="stylesheet" href="{{ '/styles.css' | prepend: site.css-path | prepend: site.asset-path | prepend: site.url }}">
+	<link rel="stylesheet" href="{{ site.url | append: site.baseurl | append: site.asset-path | append: site.css-path | append: '/styles.css' }}">
 	
 	{% include analytics.html %}
 	
-	<script type="text/javascript" src="{{ site.url | append: site.js-path | append: '/scripts.js' }}" async></script>
+	<script type="text/javascript" src="{{ site.url | append: site.baseurl | append: site.js-path | append: '/scripts.js' }}" async></script>
 
 </head>
