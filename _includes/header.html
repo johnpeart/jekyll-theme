@@ -34,8 +34,8 @@
 		
 		<div id="header-menu-links" class="header-align-right">
 			<ul class="header-menu">
-				{% for item in site.data.header-menu %}
-				<li class="header-link"><a href="{{ item.url }}">{{ item.label }}</a></li>
+				{% for menuitem in site.data.header-menu %}
+				<li class="header-link"><a href="{{ menuitem.link }}">{{ menuitem.label }}</a></li>
 				{% endfor %}
 			</ul>
 		</div>
