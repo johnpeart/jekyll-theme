@@ -337,11 +337,8 @@ body#podcast {
 			background: $magenta;
 			background-image: url("/assets/images/pride-on-arrows.svg");
 			background-repeat: no-repeat;
-			background-size: 100% 1020%;
-			@include md-up {
-				background-size: 100% 100%;
-			}
-			background-origin: content-box, content-box;
+			background-position: center;
+			background-size: 120% 120%;
 			
 			@include clearfix;
 		}
