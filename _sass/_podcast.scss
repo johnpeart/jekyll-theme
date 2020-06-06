@@ -338,7 +338,7 @@ body#podcast {
 			background-image: url("/assets/images/pride-on-arrows.svg");
 			background-repeat: no-repeat;
 			background-position: center;
-			background-size: 120% 120%;
+			background-origin: content-box, content-box;
 			
 			@include clearfix;
 		}
