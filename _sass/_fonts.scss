@@ -10,7 +10,7 @@
 			url('../fonts/JPFont-Regular.woff') format('woff'),
 			url('../fonts/JPFont-Regular.ttf') format('truetype');
 
-	font-display: swap;
+	font-display: fallback;
 }
 
 @font-face {

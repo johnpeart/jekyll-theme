@@ -467,7 +467,7 @@ $container-padding: 	 			15px;
 // stylelint-disable value-keyword-case
 $font-family-sans-serif:      		"JP", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", Roboto, "Segoe UI", Arial, sans-serif !default;
 $font-family-monospace:       		"JP", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
-$font-family-base:            		$font-family-sans-serif !default;
+$font-family-base:            		"JP", ui-monospace,'SFMono-Regular', -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", Roboto, "Segoe UI", Arial, sans-serif !default;
 
 $font-feature-settings:				"ss02", "tnum", "liga", "zero", "kern";
 $sup-font-feature-settings:			"ss02", "tnum", "liga", "zero", "kern", "frac";
