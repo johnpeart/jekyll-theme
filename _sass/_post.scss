@@ -45,7 +45,7 @@ body#post {
 
 		ul > li::before {
 			position: absolute;
-			content: "–";
+			content: "\2014";
    
 			 left: $p-font-size-base;
    
