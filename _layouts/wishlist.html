@@ -1,0 +1,66 @@
+---
+layout: default
+---
+
+{% include header.html %}
+
+<main id="content" class="container">
+				
+	<section id="page-content">
+
+		<h1 class="site-heading">Wishlist</h1>
+		
+		<aside class="intro-text">
+			
+			<p>These are the things I want to get at some point. Some of things I expect to buy myself, some of them are things I probably wouldn't spend the money on but would be great as a gift.</p>
+			
+			<p><strong>Don't know what to buy me for Christmas?</strong> Anything labelled <span class="item-giftidea">Gift idea</span> are things I am unlikely to buy myself any time soon.</p>
+			
+		</aside>
+
+		{% assign wishlists = site.data.wishlist | sort: 'list' %}
+		{% for wishlist in wishlists %}
+		
+		<section>
+			
+			<h2>{{ wishlist.list | smartify }}</h2>
+			{% if wishlist.description %}
+			<p>{{ wishlist.description | smartify }}</p>
+			{% endif %}
+			
+			<ul>
+			{% assign wishlistitems = wishlist.items | sort: 'price' %}
+			{% for item in wishlistitems %}
+				
+				<li class="item-purchased-{{ item.purchased }}">
+					<div class="item-info">
+						<span class="item-name">{% if item.link %}<a href="{{ item.link }}">{{ item.name | smartify }}</a>{% else %}{{ item.name | smartify }}{% endif %}</span>
+						{% if item.extra-details %}
+						<span class="item-extradetails">{{ item.extra-details | smartify }}</span>
+						{% endif %}
+					</div>
+					<aside class="item-metadata">
+						{% if item.gift-idea == true %}
+						<span class="item-giftidea">Gift idea</span>
+						{% endif %}
+						{% if item.price == 0.00 %}
+						<span class="item-price">Varies</span>
+						{% else %}
+						<span class="item-price">{{ item.price | round | prepend: "£" }}</span>
+						{% endif %}
+					</aside>
+				</li>
+				
+			{% endfor %}
+			</ul>
+			
+		</section>
+		
+		
+		{% endfor %}
+							
+	</section>
+	
+</main>
+
+{% include footer.html %}

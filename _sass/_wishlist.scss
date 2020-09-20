@@ -1,0 +1,157 @@
+// Home page styles
+
+// Loop page styles
+
+body#wishlist {
+		
+	h1#site-heading {
+		
+		font-weight: 			900;
+		text-align: 			left;
+		
+		line-height: 			1.1 !important;
+
+
+
+		@include xs {
+			font-size: 			$h1-font-size-base-xs;	
+		}
+		@include sm {
+			font-size: 			$h1-font-size-base-sm;	
+		}
+		@include md {
+			font-size: 			$h1-font-size-base-md;	
+		}
+		@include lg {
+			font-size: 			$h1-font-size-base-lg;	
+		}
+		@include xl {
+			font-size: 			$h1-font-size-base-xl;	
+		}
+		
+	}
+	
+	section#page-content > section {
+		
+		@include xs {
+			padding-bottom: 	0;
+		}
+		@include sm {
+			padding-bottom: 	0;
+		}
+		@include md {
+			padding-bottom: 	$p-padding-bottom-md * 1.5;
+		}
+		@include lg {
+			padding-bottom: 	$p-padding-bottom-lg * 1.5;
+		}
+		@include xl {
+			padding-bottom: 	$p-padding-bottom-xl * 1.5;
+		}
+		
+		@include clearfix;
+		
+	}
+	
+	aside.intro-text {
+		
+		span.item-giftidea {
+			position: relative;
+			
+			color: $white;
+			background: $cyan;
+			
+			border: 1px solid $cyan;
+			border-radius: 6px;
+			
+			padding: 0px 7px;
+			text-transform: uppercase;
+			font-variant: small-caps !important;
+			font-size: 70%;
+			top: -5px;
+			vertical-align: middle;
+		}
+		
+	}
+	
+	ul {		
+		padding: 			0;
+		margin: 			0;
+		
+		list-style: 		none !important;
+		
+		li {
+			list-style: 	none;
+			padding: 		20px 0;
+						
+			box-sizing: 	border-box;
+			
+			border-top: 	1px solid $gray-400;
+			@include dark-mode {
+				border-color: $gray-700;
+			}
+			
+			div.item-info {
+				display: 	block;
+				float:      none;
+				clear:      both;
+				width: 	100%;
+				@include sm-up {
+					display: 	block;
+					float:		left;
+					clear:		none;
+					width: 	70%;
+				}
+			}
+			aside.item-metadata {
+				display: 	block;
+				float:		none;
+				clear: 		both;
+				width: 		100%;
+				padding-top: 10px;
+				@include sm-up {
+					display: 	block;
+					float:		right;
+					clear:		none;
+					width: 		30%;
+					padding: 	0;
+				}
+			}
+			span.item-name {
+				display: block;
+				width: 100%;
+			}
+			span.item-extradetails {
+				display: block;
+				width: 100%;
+				
+				font-size: 70%;
+			}
+			span.item-price {
+				margin-left: 20px;
+				float: right;
+			}
+			span.item-giftidea {
+				position: relative;
+				
+				color: $white;
+				background: $cyan;
+				float: left;
+				
+				border: 1px solid $cyan;
+				border-radius: 6px;
+				
+				padding: 0px 7px;
+				text-transform: uppercase;
+				font-variant: small-caps !important;
+				font-size: 70%;
+				vertical-align: middle;
+			}
+			
+			@include clearfix;
+		}
+	}
+					
+	
+	
+}
