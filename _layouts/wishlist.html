@@ -32,7 +32,7 @@ layout: default
 				
 				<li class="item-purchased-{{ item.purchased }}">
 					<div class="item-info">
-						<span class="item-name">{% if item.link %}<a href="{{ item.link }}">{{ item.name | smartify }}</a>{% else %}{{ item.name | smartify }}{% endif %}</span>
+						<span class="item-name">{% if item.link %}<a href="{{ item.link }}" target="_blank" rel="noopener noreferrer">{{ item.name | smartify }}</a>{% else %}{{ item.name | smartify }}{% endif %}</span>
 						{% if item.extra-details %}
 						<span class="item-extradetails">{{ item.extra-details | smartify }}</span>
 						{% endif %}
