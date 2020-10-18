@@ -30,7 +30,8 @@ layout: default
 			{% assign wishlistitems = wishlist.items | sort: 'price' %}
 			{% for item in wishlistitems %}
 				
-				<li class="item-purchased-{{ item.purchased }}">
+				{% if item.purchased == false %}
+				<li class="item-purchased-false">
 					<div class="item-info">
 						<span class="item-name">{% if item.link %}<a href="{{ item.link }}" target="_blank" rel="noopener noreferrer">{{ item.name | smartify }}</a>{% else %}{{ item.name | smartify }}{% endif %}</span>
 						{% if item.extra-details %}
@@ -48,6 +49,24 @@ layout: default
 						{% endif %}
 					</aside>
 				</li>
+				{% elsif item.purchased == true %}
+				<li class="item-purchased-true">
+					<div class="item-info">
+						<span class="item-name">{% if item.link %}<a href="{{ item.link }}" target="_blank" rel="noopener noreferrer">{{ item.name | smartify }}</a>{% else %}{{ item.name | smartify }}{% endif %}</span>
+						{% if item.extra-details %}
+						<span class="item-extradetails">{{ item.extra-details | smartify }}</span>
+						{% endif %}
+					</div>
+					<aside class="item-metadata">
+						<span class="item-purchased">Purchased</span>
+						{% if item.price == 0.00 %}
+						<span class="item-price">Varies</span>
+						{% else %}
+						<span class="item-price">{{ item.price | round | prepend: "£" }}</span>
+						{% endif %}
+					</aside>
+				</li>
+				{% endif %}
 				
 			{% endfor %}
 			</ul>
