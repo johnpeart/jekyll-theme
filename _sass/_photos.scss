@@ -23,6 +23,31 @@ body#photos-photostream {
 		}
 	}
 	
+	
+	ul#photostream {
+		
+		padding: 			0;
+		margin: 			0;
+		
+		list-style: 		none !important;
+		
+		li.grid-item {
+			display: block;
+			position: relative;
+			list-style: 	none;
+			padding: 		20px 0;
+						
+			box-sizing: 	border-box;
+			
+			border-top: 	1px solid $gray-400;
+			@include dark-mode {
+				border-color: $gray-700;
+			}
+		}
+		
+	}
+	
+	
 	picture {
 		display: 	block;
 		position: 	relative;
