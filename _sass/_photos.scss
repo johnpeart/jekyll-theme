@@ -50,6 +50,7 @@ body#photos-photostream {
 					padding-left: 5px;
 					padding-right: 0;
 				}
+				
 				max-width: 50%;
 			}
 			
@@ -57,19 +58,16 @@ body#photos-photostream {
 				
 				padding: 0 0 15px 0;
 				
-				&:nth-child(3n+1) {
+				&:nth-child(odd) {
 					padding-left: 0;
 					padding-right: 7.5px;
 				}
-				&:nth-child(3n+2) {
-					padding-left: 7.5px;
-					padding-right: 7.5px;
-				}
-				&:nth-child(3n+3) {
+				&:nth-child(even) {
 					padding-left: 7.5px;
 					padding-right: 0;
 				}
-				max-width: 33%;
+				
+				max-width: 50%;
 			}
 		}
 		
@@ -87,7 +85,6 @@ body#photos-photostream {
 	
 	img.photo {
 		max-width: 			100%;
-		margin-top: 		$p-font-size-base / 2;
 	}
 
 }
