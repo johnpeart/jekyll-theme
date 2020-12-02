@@ -1,6 +1,7 @@
 // Home page styles
 
-body#photos {
+body#photos-photo,
+body#photos-photostream {
 
 	h1.page-title {
 		@include xs {
