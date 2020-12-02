@@ -1,6 +1,5 @@
-// Home page styles
+// Photos page styles
 
-body#photos-photo,
 body#photos-photostream {
 
 	h1.page-title {
@@ -37,6 +36,8 @@ body#photos-photostream {
 			list-style: none;
 			margin: 0;
 			float: left;
+			
+			line-height: 1;
 			
 			@include sm-down {
 				
@@ -87,4 +88,9 @@ body#photos-photostream {
 		max-width: 			100%;
 	}
 
+}
+
+
+body#photos-photo {
+	
 }
