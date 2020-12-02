@@ -51,6 +51,22 @@
 			}
 }
 
+// AND DOWN
+
+@mixin sm-down {
+	@media 	only screen 
+			and (max-width: $md - 1) {
+				@content;
+			}
+}
+
+@mixin md-down {
+	@media 	only screen 
+			and (max-width: $lg - 1) {
+				@content;
+			}
+}
+
 // AND UP
 
 @mixin sm-up {
@@ -80,3 +96,4 @@
 				@content;
 			}
 }
+
