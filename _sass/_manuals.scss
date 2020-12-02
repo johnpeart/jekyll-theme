@@ -1,0 +1,124 @@
+// Wishlist styles
+
+body#manuals {
+		
+	h1#site-heading {
+		
+		font-weight: 			900;
+		text-align: 			left;
+		
+		line-height: 			1.1 !important;
+
+
+
+		@include xs {
+			font-size: 			$h1-font-size-base-xs;	
+		}
+		@include sm {
+			font-size: 			$h1-font-size-base-sm;	
+		}
+		@include md {
+			font-size: 			$h1-font-size-base-md;	
+		}
+		@include lg {
+			font-size: 			$h1-font-size-base-lg;	
+		}
+		@include xl {
+			font-size: 			$h1-font-size-base-xl;	
+		}
+		
+	}
+	
+	section#page-content > section {
+		
+		@include xs {
+			padding-bottom: 	0;
+		}
+		@include sm {
+			padding-bottom: 	0;
+		}
+		@include md {
+			padding-bottom: 	$p-padding-bottom-md * 1.5;
+		}
+		@include lg {
+			padding-bottom: 	$p-padding-bottom-lg * 1.5;
+		}
+		@include xl {
+			padding-bottom: 	$p-padding-bottom-xl * 1.5;
+		}
+		
+		@include clearfix;
+		
+	}
+	
+	ul.manuals-loop {		
+		padding: 			0;
+		margin: 			0;
+		
+		list-style: 		none !important;
+		
+		li.guide {
+			display: block;
+			position: relative;
+			list-style: 	none;
+			padding: 		20px 0;
+						
+			box-sizing: 	border-box;
+			
+			border-top: 	1px solid $gray-400;
+			@include dark-mode {
+				border-color: $gray-700;
+			}
+			
+			div.guide-info {
+				display: 	block;
+				float:      none;
+				clear:      both;
+				width: 		100%;
+				@include sm-up {
+					display: 	block;
+					float:		left;
+					clear:		none;
+					width: 		70%;
+				}
+			}
+			
+			span.guide-name {
+				display: block;
+				width: 100%;
+				
+				font-weight: bold;
+			}
+			span.guide-excerpt {
+				display: block;
+				width: 100%;
+				
+				font-size: 70%;
+				line-height: 1.2;
+			}
+			aside.guide-metadata {
+				display: 	block;
+				float:		none;
+				clear: 		both;
+				width: 		100%;
+				padding-top: 10px;
+				@include sm-up {
+					display: 	block;
+					float:		right;
+					clear:		none;
+					width: 		30%;
+					padding: 	0;
+				}
+			}
+			span.guide-builddate {
+				margin-left: 20px;
+				float: right;
+			}
+			
+			@include clearfix;
+		}
+	}
+					
+	
+	
+}
