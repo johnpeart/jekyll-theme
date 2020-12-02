@@ -15,7 +15,7 @@ layout: default
 		{% for photo in site.photos %}
 		<article class="photostream grid-item">
 			<a href="{{ photo.url }}" title="View {{ photo.title }}" class="grid-link">
-				{% picture grid {{ photo.photo }} %}
+				{% picture grid {{ photo.photo }} 1:1 %}
 			</a>
 		</article>
 		{% endfor %}							
