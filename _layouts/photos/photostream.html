@@ -10,6 +10,12 @@ layout: default
 
 		<h1 class="page-title">{{ site.title | smartify }}</h1>
 
+		{% for photo in site.photos %}
+		
+			{% picture {{ photo.photo }} %}
+		
+		{% endfor %}
+
 		{{ content }}
 							
 	</section>
