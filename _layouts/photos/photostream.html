@@ -12,7 +12,9 @@ layout: default
 
 		{% for photo in site.photos %}
 		
-			{% picture grid {{ photo.photo }} %}
+			<a href="{{ photo.url }}" title="View {{ photo.description }}" class="grid-link">
+				{% picture grid {{ photo.photo }} %}
+			</a>
 		
 		{% endfor %}
 
