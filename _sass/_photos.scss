@@ -23,10 +23,16 @@ body#photos-photostream {
 		}
 	}
 	
+	picture {
+		display: 	block;
+		position: 	relative;
+		margin: 	0;
+		padding: 	0;
+	}
+	
 	img.photo {
-		width: 				100%;
 		max-width: 			100%;
-		margin-top: 			$p-font-size-base / 2;
+		margin-top: 		$p-font-size-base / 2;
 	}
 
 }
