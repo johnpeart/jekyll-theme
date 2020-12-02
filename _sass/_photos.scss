@@ -32,18 +32,22 @@ body#photos-photostream {
 		list-style: 		none !important;
 		
 		li.grid-item {
-			display: block;
+			display: inline-block;
 			position: relative;
-			list-style: 	none;
-			padding: 		20px 0;
-						
-			box-sizing: 	border-box;
+			list-style: none;
+			padding: $pad-1;
+			margin: 0;
+			float: left;
 			
-			border-top: 	1px solid $gray-400;
-			@include dark-mode {
-				border-color: $gray-700;
+			@include sm-down {
+				max-width: 50%;
+			}
+			@include md-up {
+				max-width: 33%;
 			}
 		}
+		
+		@include clearfix;
 		
 	}
 	
