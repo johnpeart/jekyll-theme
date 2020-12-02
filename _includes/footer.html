@@ -1,10 +1,24 @@
 <footer id="site-footer">
 	
-	<section class="container">
+	<div class="container footer">
 
-		<p class="footer-wordmark">John Peart</p>
-		<p><a href="//johnpe.art/">johnpe.art</a></p>
+		<aside id="footer--wordmark">
+			
+			<p class="footer--wordmark">John Peart</p>
+			<p><a href="//johnpe.art/" class="footer--site-link">johnpe.art</a></p>
+			
+		</aside>
+		
+		<nav id="footer--links">
+			
+			<ul>
+				{% for item in site.data.footer-menu %}
+				<li><a href="{{ item.link }}" class="footer--nav-link" title="Visit the {{ item.label }} page">{{ item.label }}</a></li>
+				{% endfor %}
+			</ul>
+			
+		</nav>
 	
-	</section>
+	</div>
 	
 </footer>
