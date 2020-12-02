@@ -1,0 +1,25 @@
+// Home page styles
+
+body#photos {
+
+	h1.page-title {
+		@include xs {
+			font-size: 		$h1-font-size-base-xs;
+		}
+		@include sm {
+			font-size: 		$h1-font-size-base-sm;
+		}
+		@include md {
+			font-size: 		$h1-font-size-base-md;
+		}
+		@include lg {
+			font-size: 		$h1-font-size-base-lg * 2;
+			line-height: 	$h1-line-height-base-lg * 2;
+		}
+		@include xl {
+			font-size: 		$h1-font-size-base-xl * 1.5;
+			line-height: 	$h1-line-height-base-xl * 1.5;
+		}
+	}
+
+}
