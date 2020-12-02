@@ -3,7 +3,7 @@
 
   {% include head.html %}
 
-  <body id="{{ page.layout }}"{% if page.theme %} class="theme-{{ page.theme }}"{% endif %}>
+  <body id="{{ page.layout | slugify }}"{% if page.theme %} class="theme-{{ page.theme | slugify }}"{% endif %}>
 	  
   	{% include skiplink.html %}
 
