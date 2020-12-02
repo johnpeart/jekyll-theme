@@ -10,9 +10,11 @@ layout: default
 
 		<h1 class="page-title">{{ page.title | smartify }}</h1>
 
+		<article>
 		{% picture default {{ page.photo }} %}
-
+		
 		{{ content }}
+		</article>
 							
 	</section>
 	

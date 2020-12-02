@@ -10,13 +10,17 @@ layout: default
 
 		<h1 class="page-title">{{ site.title | smartify }}</h1>
 
-		{% for photo in site.photos %}
-		
-			<a href="{{ photo.url }}" title="View {{ photo.description }}" class="grid-link">
-				{% picture grid {{ photo.photo }} %}
-			</a>
-		
-		{% endfor %}
+		<ul id="photostream">
+			{% for photo in site.photos %}
+			<li class="photostream grid-item">
+				<article>
+					<a href="{{ photo.url }}" title="View {{ photo.title }}" class="grid-link">
+						{% picture grid {{ photo.photo }} %}
+					</a>
+				</article>
+			</li>
+			{% endfor %}
+		</ul>
 
 		{{ content }}
 							
