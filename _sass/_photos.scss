@@ -22,5 +22,11 @@ body#photos-photostream {
 			line-height: 	$h1-line-height-base-xl * 1.5;
 		}
 	}
+	
+	img.photo {
+		width: 				100%;
+		max-width: 			100%;
+		margin-top: 			$p-font-size-base / 2;
+	}
 
 }
