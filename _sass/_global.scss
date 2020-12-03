@@ -45,5 +45,22 @@ body {
 }
 
 main {
-	min-height: calc(80vh);
+	
+	@include xs {
+		min-height: calc(100vh - #{$header-height-base-xs} - (#{$footer-padding-top-xs} * 10));
+	}
+	@include sm {
+		min-height: calc(100vh - #{$header-height-base-sm} - (#{$footer-padding-top-sm} * 10));
+	}
+	@include md {
+		min-height: calc(100vh - #{$header-height-base-md} - (#{$footer-padding-top-md} * 10));
+	}
+	@include lg {
+		min-height: calc(100vh - #{$header-height-base-lg} - (#{$footer-padding-top-lg} * 10));
+	}
+	@include xl {
+		min-height: calc(100vh - #{$header-height-base-xl} - (#{$footer-padding-top-xl} * 10));
+	}
+	
+	
 }

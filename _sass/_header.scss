@@ -23,32 +23,32 @@ header#site-header {
 			margin: 			0;
 			
 			@include xs {
-				font-size: 		$header-font-size-base-xs;
-				line-height: 	$header-line-height-base-xs;
+				font-size: 			$header-font-size-base-xs;
+				line-height: 		$header-line-height-base-xs;
 				padding-top: 		$header-padding-top-xs;
 				padding-bottom: 	$header-padding-bottom-xs;
 			}
 			@include sm {
-				font-size: 		$header-font-size-base-sm;
-				line-height: 	$header-line-height-base-sm;
+				font-size: 			$header-font-size-base-sm;
+				line-height: 		$header-line-height-base-sm;
 				padding-top: 		$header-padding-top-sm;
 				padding-bottom: 	$header-padding-bottom-sm;
 			}
 			@include md {
-				font-size: 		$header-font-size-base-md;
-				line-height: 	$header-line-height-base-md;
+				font-size: 			$header-font-size-base-md;
+				line-height: 		$header-line-height-base-md;
 				padding-top: 		$header-padding-top-md;
 				padding-bottom: 	$header-padding-bottom-md;
 			}
 			@include lg {
-				font-size: 		$header-font-size-base-lg;
-				line-height: 	$header-line-height-base-lg;
+				font-size: 			$header-font-size-base-lg;
+				line-height: 		$header-line-height-base-lg;
 				padding-top: 		$header-padding-top-lg;
 				padding-bottom: 	$header-padding-bottom-lg;
 			}
 			@include xl {
-				font-size: 		$header-font-size-base-xl;
-				line-height: 	$header-line-height-base-xl;
+				font-size: 			$header-font-size-base-xl;
+				line-height: 		$header-line-height-base-xl;
 				padding-top: 		$header-padding-top-xl;
 				padding-bottom: 	$header-padding-bottom-xl;
 			}

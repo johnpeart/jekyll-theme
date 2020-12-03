@@ -156,6 +156,14 @@ $header-padding-bottom-md:				$header-font-size-base-md / 2;
 $header-padding-bottom-lg:				$header-font-size-base-lg / 2;
 $header-padding-bottom-xl:				$header-font-size-base-xl / 2;
 
+$header-height-base:                    $p-line-height-base + $header-padding-top + $header-padding-bottom;
+$header-height-base-xs:                 $p-line-height-base-xs + $header-padding-top-xs + $header-padding-bottom-xs;
+$header-height-base-sm:                 $p-line-height-base-sm + $header-padding-top-sm + $header-padding-bottom-sm;
+$header-height-base-md:                 $p-line-height-base-md + $header-padding-top-md + $header-padding-bottom-md;
+$header-height-base-lg:                 $p-line-height-base-lg + $header-padding-top-lg + $header-padding-bottom-lg;
+$header-height-base-xl:                 $p-line-height-base-xl + $header-padding-top-xl + $header-padding-bottom-xl;
+
+
 $header-wordmark-font-weight:				bold;
 $header-font-weight:						normal;
 $header-text-decoration:					none;
