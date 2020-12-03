@@ -2,29 +2,29 @@
 
 body#manuals-home {
 		
-	h1#site-heading {
+	h1.site-heading {
 		
 		font-weight: 			900;
 		text-align: 			left;
 		
 		line-height: 			1.1 !important;
 
-
-
 		@include xs {
-			font-size: 			$h1-font-size-base-xs;	
+			font-size: 		$h1-font-size-base-xs;
 		}
 		@include sm {
-			font-size: 			$h1-font-size-base-sm;	
+			font-size: 		$h1-font-size-base-sm;
 		}
 		@include md {
-			font-size: 			$h1-font-size-base-md;	
+			font-size: 		$h1-font-size-base-md;
 		}
 		@include lg {
-			font-size: 			$h1-font-size-base-lg;	
+			font-size: 		$h1-font-size-base-lg * 2;
+			line-height: 	$h1-line-height-base-lg * 2;
 		}
 		@include xl {
-			font-size: 			$h1-font-size-base-xl;	
+			font-size: 		$h1-font-size-base-xl * 1.5;
+			line-height: 	$h1-line-height-base-xl * 1.5;
 		}
 		
 	}
