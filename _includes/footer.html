@@ -12,9 +12,17 @@
 		<nav id="footer--links">
 			
 			<ul>
-				{% for item in site.data.footer-menu %}
-				<li><a href="{{ item.link }}" class="footer--nav-link" title="Visit the {{ item.label }} page">{{ item.label }}</a></li>
-				{% endfor %}
+				{% if site.data.footer-menu %}
+					{% for item in site.data.footer-menu %}
+					<li><a href="{{ item.link }}" class="footer--nav-link" title="Visit the {{ item.label }} page">{{ item.label }}</a></li>
+					{% endfor %}
+				{% else %}
+					<li><a href="//johnpe.art/about" class="footer--nav-link" title="Visit the About me page">About me</a></li>
+					<li><a href="//johnpe.art/writing" class="footer--nav-link" title="Visit the Writing page">Writing</a></li>
+					<li><a href="//podcast.johnpe.art" class="footer--nav-link" title="Visit the Podcasts page">Podcasts</a></li>
+					<li><a href="//goals.johnpe.art" class="footer--nav-link" title="Visit the Goals page">Goals</a></li>
+					<li><a href="//johnpe.art/projects" class="footer--nav-link" title="Visit the Projects page">Projects</a></li>
+				{% endif %}
 			</ul>
 			
 		</nav>

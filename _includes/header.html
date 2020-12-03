@@ -35,9 +35,19 @@
 		
 		<div id="header-menu-links" class="header-align-right">
 			<ul class="header-menu">
-				{% for menuitem in site.data.header-menu %}
-				<li class="header-link"><a href="{{ menuitem.link }}">{{ menuitem.label }}</a></li>
-				{% endfor %}
+				{% if site.data.header-menu %}
+					{% for menuitem in site.data.header-menu %}
+					<li class="header-link"><a href="{{ menuitem.link }}">{{ menuitem.label }}</a></li>
+					{% endfor %}
+				{% else %}
+					<li class="header-link"><a href="//johnpe.art/writing">Writing</a></li>
+					
+					<li class="header-link"><a href="//johnpe.art/projects">Projects</a></li>
+					
+					<li class="header-link"><a href="//podcast.johnpe.art">Podcasts</a></li>
+					
+					<li class="header-link"><a href="//johnpe.art/about">About me</a></li>
+				{% endif %}
 			</ul>
 		</div>
 	</nav>
