@@ -31,7 +31,7 @@ layout: default
 			{% for item in wishlistitems %}
 				
 				{% if item.purchased == false %}
-				<li class="item-purchased-false">
+				<li class="wishlist-item item-purchased-false">
 					<div class="item-info">
 						<span class="item-name">{% if item.link %}<a href="{{ item.link }}" target="_blank" rel="noopener noreferrer">{{ item.name | smartify }}</a>{% else %}{{ item.name | smartify }}{% endif %}</span>
 						{% if item.extra-details %}
@@ -50,7 +50,7 @@ layout: default
 					</aside>
 				</li>
 				{% elsif item.purchased == true %}
-				<li class="item-purchased-true">
+				<li class="wishlist-item item-purchased-true">
 					<div class="item-info">
 						<span class="item-name">{% if item.link %}<a href="{{ item.link }}" target="_blank" rel="noopener noreferrer">{{ item.name | smartify }}</a>{% else %}{{ item.name | smartify }}{% endif %}</span>
 						{% if item.extra-details %}
