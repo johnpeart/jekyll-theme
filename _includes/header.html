@@ -1,4 +1,3 @@
-{% if site.header != false %}
 <header id="site-header">
 	
 	<nav role="navigation" class="container">
@@ -6,6 +5,8 @@
 			<p class="header-wordmark"><a href="//johnpe.art/">John Peart</a></p>
 		</div>
 		
+		{% if site.header != false %}
+	
 		<button id="header-menu-toggle" onclick="toggleMenu()">
 				
 				<svg id="header-menu-toggle-image" class="" version="1.1" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" viewBox="0 0 42 38" width="42" height="38">
@@ -50,7 +51,8 @@
 				{% endif %}
 			</ul>
 		</div>
+		
+		{% endif %}
 	</nav>
 	
 </header>
-{% endif %}
