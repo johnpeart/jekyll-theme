@@ -140,6 +140,8 @@ footer#site-footer {
 				width: 50%;
 				float: left;
 				
+				border: none;
+				
 				@include sm-up {
 					text-align: right;
 				}
