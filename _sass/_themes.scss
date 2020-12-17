@@ -109,14 +109,14 @@ body {
 		h1.post-title {
 			@include facebook-blue;
 		}
-
+	
 		a {
 			&:hover,
 			&:focus {
 				color: $facebook-blue;
 		
 				@include dark-mode {
-					color: $cyan;
+					color: lighten($facebook-blue, 20%) !important; 
 				}
 			}
 		}

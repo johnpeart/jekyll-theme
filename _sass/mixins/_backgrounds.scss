@@ -104,11 +104,8 @@
 @mixin facebook-blue {
 	color: 				$facebook-blue !important;
 	
-	a {
-		&:hover,
-		&:focus {
-			color:		$facebook-blue;
-		}
+	@include dark-mode {
+		color: lighten($facebook-blue, 20%) !important; 
 	}
 }
 
