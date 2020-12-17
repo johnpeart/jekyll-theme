@@ -119,3 +119,18 @@
 		}
 	}
 }
+
+@mixin badideasyellow {
+	color: 				$black !important;
+	
+	@include dark-mode {
+		color: $bad-ideas-yellow !important; 
+	}
+	
+	a {
+		&:hover,
+		&:focus {
+			color:		$red;
+		}
+	}
+}

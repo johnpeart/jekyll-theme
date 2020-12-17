@@ -135,6 +135,40 @@ body {
 		}
 		
 	}
+	
+	&.theme-podcast {
+		
+		header#site-header,
+		div.header-align-left,
+		h1.post-title {
+			@include badideasyellow;
+		}
+	
+		a {
+			&:hover,
+			&:focus {
+				color: $cyan;
+		
+				@include dark-mode {
+					color: $bad-ideas-yellow !important; 
+				}
+			}
+		}
+		
+		button#header-menu-toggle:hover {
+			svg#header-menu-toggle-image { 
+				rect,
+				&.open rect {
+					fill:			$cyan !important;
+					
+					@include dark-mode {
+						fill:		$cyan !important;
+					}
+				}
+			}
+		}
+		
+	}
 
 	&.theme-red {
 		
