@@ -39,16 +39,7 @@ body#photos-home {
 			
 			padding: 0 0 10px 0;
 			
-			&:nth-of-type(odd) {
-				padding-left: 0;
-				padding-right: 5px;
-			}
-			&:nth-of-type(even) {
-				padding-left: 5px;
-				padding-right: 0;
-			}
-			
-			max-width: calc(50% - 5px);
+			max-width: 100%;
 		}
 		
 		@include md-up {
@@ -64,25 +55,136 @@ body#photos-home {
 				padding-right: 0;
 			}
 			
-			max-width: calc(50% - 10px);
+			max-width: 50%;
 		}
 	}
+	
+	nav.pagination {
+	
+		position: relative;
+		display:        flex;
+	
+		width:          100%;
+	
+		@include sm-down {
+			flex-direction: column;
+		}
+	
+		margin-top: 30px;
+	
+		@include clearfix;
+	
+		p[class^="page--next-prev--"] {
+	
+			@extend h4;
+			font-style: normal;
+	
+			position: relative;
+			flex: 1;
+			
+			padding: 0;
+	
+			text-align: center;
+	
+			@include sm-down {
+				margin: 15px 0 0 0;
+	
+				&:last-child {
+					margin-bottom: 15px;
+				}
+			}
+	
+			@include md-up {
+	
+				margin: 30px 0;
+	
+				width: 50%;
+				max-width: 50%;
+			
+				&:first-child {
+					margin-right: 15px;
+				}
+				&:last-child {
+					margin-left: 15px;
+				}
+				&:only-child {
+					margin-left: 0;
+					margin-right: 0;
+				}
+	
+			}
+	
+			a {
+				display: inline-block;
+	
+				&:hover {
+					
+				}
+	
+			}
+	
+			&:hover {
+				outline:    none;
+			}
+	
+			@include clearfix;
+		}
+	
+		p.page--next-prev--prev {
+			@include md-up {
+				float:      left;
+				text-align: left;
+			}
+		}
+	
+		p.page--next-prev--next {
+			@include md-up {
+				float:      right;
+				text-align: right;
+			}
+		}
+	
+		p.page--next-prev--prev-blank {
+			background: none;
+	
+			&:hover {
+				background: none;
+			}
+	
+			@include sm-down {
+				display: none;
+			}
+		}
+	
+	}	
 		
-}
+	picture {
+		display: 	block;
+		position: 	relative;
+		margin: 	0;
+		padding: 	0;
+	}
 	
 	
-picture {
-	display: 	block;
-	position: 	relative;
-	margin: 	0;
-	padding: 	0;
-}
-
-img.photo {
-	max-width: 			100%;
+	img.photo {
+		max-width: 			100%;
+	}
+		
 }
 
 
 body#photos-photo {
+		
+	picture {
+		display: 	block;
+		position: 	relative;
+		margin: 	0;
+		padding: 	0;
+	}
+	
+	
+	img.photo {
+		max-width: 			100%;
+	}
 	
 }
