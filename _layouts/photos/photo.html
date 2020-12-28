@@ -11,9 +11,60 @@ layout: default
 		<h1 class="page-title">{{ page.title | smartify }}</h1>
 
 		<article>
-		{% picture default {{ page.photo }} %}
+			
+			{% picture default {{ page.photo }} %}
+			
+			<section class="photo-description">
+			{{ content }}
+			</section>
 		
-		{{ content }}
+			<dl>
+				<span class="dl-item">
+				<dt>Date taken:</dt>
+				<dd>{{ page.date | date: "%d %B %Y" }}</dd>
+				</span>
+				
+				{% for EXIF in page.EXIF %}
+					
+					<span class="dl-item">
+					{% if EXIF.camera != "" %}
+					<dt>Camera:</dt>
+					<dd>{{ EXIF.camera }}</dd>
+					{% endif %}
+					</span>
+					
+					<span class="dl-item">
+					{% if EXIF.apeture != "" %}
+					<dt>Apeture:</dt>
+					<dd>{{ EXIF.apeture | prepend: "ƒ/"}}</dd>
+					{% endif %}
+					</span>
+					
+					<span class="dl-item">
+					{% if EXIF.shutter != "" %}
+					<dt>Shutter speed:</dt>
+					<dd>{{ EXIF.shutter }}</dd>
+					{% endif %}
+					</span>
+					
+					<span class="dl-item">
+					{% if EXIF.focallength != "" %}
+					<dt>Focal length:</dt>
+					<dd>{{ EXIF.focallength | append: "mm" }}</dd>
+					{% endif %}
+					</span>
+					
+					<span class="dl-item">
+					{% if EXIF.iso != "" %}
+					<dt>ISO:</dt>
+					<dd>{{ EXIF.iso }}</dd>
+					{% endif %}
+					</span>
+					
+				{% endfor %}
+			
+			</dl>
+		
 		</article>
 							
 	</section>

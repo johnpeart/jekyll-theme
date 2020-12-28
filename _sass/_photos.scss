@@ -59,6 +59,20 @@ body#photos-home {
 		}
 	}
 	
+	a.grid-link {
+		
+		display: block;
+		line-height: 0;
+		
+		&:hover {
+			outline: 3px solid $cyan;
+		}
+		&:focus {
+			outline: 3px solid $cyan;
+		}
+		
+	}
+	
 	nav.pagination {
 	
 		position: relative;
@@ -174,17 +188,56 @@ body#photos-home {
 
 
 body#photos-photo {
-		
-	picture {
-		display: 	block;
-		position: 	relative;
-		margin: 	0;
-		padding: 	0;
-	}
-	
 	
 	img.photo {
+		display: 	block;
+		position: 	relative;
+		margin: 	0 auto;
+		padding: 	0 0 20px;
 		max-width: 			100%;
+		max-height: 		100vh;
+	}
+	
+	dl {
+		
+		background: 			$blockquote-background;
+		
+		/* Text and background color for dark mode */
+		@media (prefers-color-scheme: dark) {
+			background: 		$blockquote-background-dark-mode;
+		}
+		
+		padding: 			20px;
+		padding-bottom: 	0px;
+		
+		margin-top: 		0;
+				
+		
+		p,dd {		
+			&:first-child {
+				padding-top: 0;
+			}
+			&:last-of-type {
+				padding-bottom: 0;
+			}
+		}
+		
+		span.dl-item {
+			
+			display: block;
+			position: relative;
+			
+			padding-bottom: 20px !important;
+			
+			@include md-up {
+				width: 50%;
+				max-width: 50%;
+				float: left;
+			}
+
+		}
+
+		@include clearfix;		
 	}
 	
 }

@@ -272,7 +272,7 @@ h5 {
 	
 }
 
-p {
+p,dt,dd {
 	
 	font-size: 			$p-font-size-base;
 	line-height: 		$p-line-height-base;
@@ -319,6 +319,10 @@ p {
 	
 }
 
+dt {
+	padding-bottom: 0;
+}
+
 sup {
 	font-feature-settings:		$sup-font-feature-settings;
     text-decoration: none;
@@ -334,7 +338,7 @@ sup {
     }
 }
 	
-strong, b {
+strong, b,dt {
 	font-weight: 	bold;
 }
 
