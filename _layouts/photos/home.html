@@ -12,11 +12,11 @@ layout: default
 
 		{{ content }}
 		
-		{% for photo in paginator.posts %}
+		{% for page in paginator.posts %}
 		<article class="photostream grid-item">
-			<a href="{{ photo.url }}" title="View {{ photo.title }}" class="grid-link"
-				style="background: url('/assets/images/photos/{{ photo.image }}')">
-				<p class="grid-caption">{{ photo.title }}</p>
+			<a href="{{ page.url }}" title="View {{ page.title }}" class="grid-link"
+				style="background: url('{{ site.url | append: site.baseurl | append: '/assets/images/photos/' | append: page.image }}')">
+				<p class="grid-caption">{{ page.title }}</p>
 			</a>
 		</article>
 		{% endfor %}

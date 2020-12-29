@@ -12,7 +12,7 @@ layout: default
 
 		<article>
 			
-			<img src="/assets/images/photos/{{ page.image }}" class="photo">
+			<img src="{{ site.url | append: site.baseurl | append: '/assets/images/photos/' | append: page.image }}" class="photo">
 			
 			<section class="photo-description">
 			{{ content }}
