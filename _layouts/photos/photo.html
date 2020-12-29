@@ -43,7 +43,11 @@ layout: default
 					<span class="dl-item">
 					{% if EXIF.shutter != "" %}
 					<dt>Shutter speed:</dt>
-					<dd>{{ EXIF.shutter }}</dd>
+					{% if EXIF.shutter < 1 %}
+					<dd>{{ 1 | divided_by: EXIF.shutter | round: 0  | prepend: '1/' }}</dd>
+					{% else %}
+					<dd>{{ EXIF.shutter | round: 0 | append: '”' }}</dd>
+					{% endif %}
 					{% endif %}
 					</span>
 					
