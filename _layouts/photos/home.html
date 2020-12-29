@@ -14,7 +14,7 @@ layout: default
 		
 		{% for post in paginator.posts %}
 		<article class="photostream grid-item">
-			<a href="{{ page.url }}" title="View {{ post.title }}" class="grid-link"
+			<a href="{{ post.url }}" title="View {{ post.title }}" class="grid-link"
 				style="background: url('{{ site.url | append: site.baseurl | append: '/assets/images/photos/' | append: post.image }}')">
 				<p class="grid-caption">{{ post.title }}</p>
 			</a>
