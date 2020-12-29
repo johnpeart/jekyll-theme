@@ -15,4 +15,4 @@
 {% else %}
 <meta name="twitter:image" 			content="{% if page.image %}{{ site.url | append: site.baseurl | append: site.social-images-path | append: page.image }}{% else %}{{ site.url | append: site.baseurl | append: site.social-media-image }}{% endif %}">
 {% endif %}
-<meta name="twitter:image:alt" 		content="{% if page.image-description %}{{ page.image-description | strip_html }}{% else %}{{ page.title }}{% endif %}">
+<meta name="twitter:image:alt" 		content="{% if page.image-alt %}{{ page.image-alt | strip_html }}{% else %}{{ page.title }}{% endif %}">
