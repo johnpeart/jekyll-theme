@@ -46,7 +46,7 @@ body#photos-home {
 			
 			margin: 0 0 20px 0;
 			
-			width: 50%;
+			width: calc(50% - 10px);
 			height: 300px;
 			
 			&:nth-of-type(odd) {
