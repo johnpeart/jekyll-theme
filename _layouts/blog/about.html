@@ -2,79 +2,65 @@
 layout: blog/page
 ---
 
+{% for entry in site.data.about %}
+
 <section>
-		
-	<h2 class="loop-header">Career</h2>
 	
-	<ul class="about">
+	<header>	
+		<h2 class="about-header about-{{ entry.section | slugify }}">{{ entry.section | smartify }}</h2>
+	</header>
+			
+	{% for entry in entry.organisations %}
+	
+		{% if entry.hidden != true %}
 		
-		{% for about in site.data.about %}
+		<h3 class="about-organisation"><a href="{{ entry.url }}" title="Visit {{ entry.organisation | smartify }}’s website (Opens in new window)" target="_blank" rel="noopener noreferrer">{{ entry.organisation | smartify }}</a></h3>
 		
-		{% if about.category == "Career" %}
+		{% if entry.start %}
+			{% if entry.end == "present" %}
+			<p class="about-time">{{ entry.start | date: '%B %Y' }} to {{ entry.end }}</p>
+			{% else %}
+			<p class="about-time">{{ entry.start | date: '%B %Y' }} to {{ entry.end | date: '%B %Y' }}</p>
+			{% endif %}
+		{% endif %}
 		
-		<li>
-			<p class="about-job-title">{{ about.jobtitle | smartify }}</p>
-			<p class="about-organisation"><a href="{{ about.url }}" title="Visit {{ about.organisation }}'s website">{{ about.organisation | smartify }}</a></p>
-			<p class="about-time">{{ about.time }}</p>
-		</li>
+		{% for entry in entry.jobs %}
+		
+			{% if entry.hidden != true %}
+			<h4 class="about-job-title">{{ entry.title | smartify }}</h4>
+			{% if entry.end == "present" %}
+			<p class="about-time">{{ entry.start | date: '%B %Y' }} to {{ entry.end }}</p>
+			{% else %}
+			<p class="about-time">{{ entry.start | date: '%B %Y' }} to {{ entry.end | date: '%B %Y' }}</p>
+			{% endif %}
+			
+				{% for entry in entry.notes %}
+				<section class="about-details">
+				{{ entry.description | markdownify }}
+	
+				{% if entry.projects %}
+				<ul class="about-job-projects">
+					<h5 class="about-job-projects">Major projects and publications</h5>
+				{% for entry in entry.projects %}
+					{% if entry.url %}
+					<li><a href="{{ entry.url }}" title="Read more about {{ entry.project }} (Opens in new window)" target="_blank" rel="noopener noreferrer">{{ entry.project | smartify }}</a></li>
+					{% else %}
+					<li>{{ entry.project | smartify }}</li>
+					{% endif %}
+				{% endfor %}
+				</ul>
+				{% endif %}
+				</section>
+				{% endfor %}
+
+			{% endif %}
+		
+		{% endfor %}
 		
 		{% endif %}
 		
-		{% endfor %}
-	
-	</ul>
-	
-</section>
-		
-<section>
-		
-	<h2 class="loop-header">Volunteering</h2>
-	
-	<ul class="about">
-		
-		{% for about in site.data.about %}
-		
-		{% if about.category == "Volunteering" %}
-		
-		<li>
-			<p class="about-job-title">{{ about.jobtitle | smartify }}</p>
-			<p class="about-organisation"><a href="{{ about.url }}" title="Visit {{ about.organisation }}'s website">{{ about.organisation | smartify }}</a></p>
-			<p class="about-time">{{ about.time }}</p>
-		</li>
-		
-		{% endif %}
-		
-		{% endfor %}
-	
-	</ul>
-	
-</section>
-	
-<section>
-		
-	<h2 class="loop-header">Education</h2>
-	
-	<ul class="about">
-		
-		{% for about in site.data.about %}
-		
-		{% if about.category == "Education" %}
-		
-		<li>
-			<p class="about-job-title">{{ about.jobtitle | smartify }}</p>
-			<p class="about-notes">{{ about.notes | smartify }}</p>
-			<p class="about-organisation"><a href="{{ about.url }}" title="Visit {{ about.organisation }}'s website">{{ about.organisation | smartify }}</a></p>
-			<p class="about-time">{{ about.time }}</p>
-		</li>
-		
-		{% endif %}
-		
-		{% endfor %}
-	
-	</ul>
+	{% endfor %}
 	
 </section>
 
-
-
-
+{% endfor %}
