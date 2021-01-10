@@ -14,6 +14,7 @@ layout: blog/page
 	
 		{% if entry.hidden != true %}
 		
+		<article>
 		<h3 class="about-organisation"><a href="{{ entry.url }}" title="Visit {{ entry.organisation | smartify }}’s website (Opens in new window)" target="_blank" rel="noopener noreferrer">{{ entry.organisation | smartify }}</a></h3>
 		
 		{% if entry.start %}
@@ -25,15 +26,38 @@ layout: blog/page
 		{% endif %}
 		
 		{% for entry in entry.jobs %}
-		
-			{% if entry.hidden != true %}
-			<h4 class="about-job-title">{{ entry.title | smartify }}</h4>
-			{% if entry.end == "present" %}
-			<p class="about-time">{{ entry.start | date: '%B %Y' }} to {{ entry.end }}</p>
-			{% else %}
-			<p class="about-time">{{ entry.start | date: '%B %Y' }} to {{ entry.end | date: '%B %Y' }}</p>
-			{% endif %}
 			
+			{% if entry.hidden != true %}
+			
+			<article class="about-job-entry">
+				{% if entry.notes %}
+				<button class="about-job-entry--header expand-button">
+					<h4 class="about-job-title">
+						{% for entry in entry.notes %}<span class="about-job-title--label">{% endfor %}
+						{{ entry.title | smartify }}
+						{% for entry in entry.notes %}</span>{% endfor %}
+					</h4>
+					{% if entry.end == "present" %}
+					<p class="about-time">{{ entry.start | date: '%B %Y' }} to {{ entry.end }}</p>
+					{% else %}
+					<p class="about-time">{{ entry.start | date: '%B %Y' }} to {{ entry.end | date: '%B %Y' }}</p>
+					{% endif %}
+				</button>
+				{% else %}
+				<header class="about-job-entry--header">
+					<h4 class="about-job-title">
+						{% for entry in entry.notes %}<span class="about-job-title--label">{% endfor %}
+						{{ entry.title | smartify }}
+						{% for entry in entry.notes %}</span>{% endfor %}
+					</h4>
+					{% if entry.end == "present" %}
+					<p class="about-time">{{ entry.start | date: '%B %Y' }} to {{ entry.end }}</p>
+					{% else %}
+					<p class="about-time">{{ entry.start | date: '%B %Y' }} to {{ entry.end | date: '%B %Y' }}</p>
+					{% endif %}
+				</header>
+				{% endif %}
+				
 				{% for entry in entry.notes %}
 				<section class="about-details">
 				{{ entry.description | markdownify }}
@@ -52,10 +76,12 @@ layout: blog/page
 				{% endif %}
 				</section>
 				{% endfor %}
-
+			</article>
+				
 			{% endif %}
 		
 		{% endfor %}
+		</article>
 		
 		{% endif %}
 		
