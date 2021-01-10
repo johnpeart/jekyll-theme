@@ -18,29 +18,6 @@ body {
 			@include cyan;
 		}
 		
-		button#header-menu-toggle {
-			color: 					$black;
-			
-			&:hover,
-			&:focus {
-				color:				$white !important;
-			}
-
-		}
-		
-		button#header-menu-toggle:hover {
-			svg#header-menu-toggle-image { 
-				rect,
-				&.open rect {
-					fill:			$cyan !important;
-					
-					@include dark-mode {
-						fill:		$cyan !important;
-					}
-				}
-			}
-		}
-		
 	}
 	
 	&.theme-magenta {
@@ -51,25 +28,6 @@ body {
 			@include magenta;
 		}
 
-		a {
-			&:hover,
-			&:focus {
-				color: $magenta;
-			}
-		}
-		
-		button#header-menu-toggle:hover {
-			svg#header-menu-toggle-image { 
-				rect,
-				&.open rect {
-					fill:			$magenta !important;
-					
-					@include dark-mode {
-						fill:		$magenta !important;
-					}
-				}
-			}
-		}
 	}
 	
 	&.theme-green {
@@ -78,26 +36,6 @@ body {
 		div.header-align-left,
 		h1.post-title {
 			@include green;
-		}
-
-		a {
-			&:hover,
-			&:focus {
-				color: $green;
-			}
-		}
-		
-		button#header-menu-toggle:hover {
-			svg#header-menu-toggle-image { 
-				rect,
-				&.open rect {
-					fill:			$green !important;
-					
-					@include dark-mode {
-						fill:		$green !important;
-					}
-				}
-			}
 		}
 		
 	}
@@ -109,30 +47,6 @@ body {
 		h1.post-title {
 			@include facebook-blue;
 		}
-	
-		a {
-			&:hover,
-			&:focus {
-				color: $facebook-blue;
-		
-				@include dark-mode {
-					color: lighten($facebook-blue, 20%) !important; 
-				}
-			}
-		}
-		
-		button#header-menu-toggle:hover {
-			svg#header-menu-toggle-image { 
-				rect,
-				&.open rect {
-					fill:			$cyan !important;
-					
-					@include dark-mode {
-						fill:		$cyan !important;
-					}
-				}
-			}
-		}
 		
 	}
 	
@@ -142,30 +56,6 @@ body {
 		div.header-align-left,
 		h1.post-title {
 			@include badideasyellow;
-		}
-	
-		a {
-			&:hover,
-			&:focus {
-				color: $cyan;
-		
-				@include dark-mode {
-					color: $bad-ideas-yellow !important; 
-				}
-			}
-		}
-		
-		button#header-menu-toggle:hover {
-			svg#header-menu-toggle-image { 
-				rect,
-				&.open rect {
-					fill:			$cyan !important;
-					
-					@include dark-mode {
-						fill:		$cyan !important;
-					}
-				}
-			}
 		}
 		
 	}
@@ -178,32 +68,6 @@ body {
 			@include red;
 		}
 
-		a {
-			&:hover,
-			&:focus {
-				color: $red;
-		
-				@include dark-mode {
-					color: $red;
-				}
-			}
-		}
-		
-		
-		
-		button#header-menu-toggle:hover {
-			svg#header-menu-toggle-image { 
-				rect,
-				&.open rect {
-					fill:			$red !important;
-					
-					@include dark-mode {
-						fill:		$red !important;
-					}
-				}
-			}
-		}
-		
 	}
 	
 }
