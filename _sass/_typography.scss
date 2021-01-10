@@ -18,17 +18,20 @@ a {
 		color: 					$link-color-dark-mode;
 	}
 	
-	&:hover,
-	&:focus {
-		color: 					$link-hover-color;
+	&:hover {
+		color: 					$link-hover-color !important;
 		text-decoration: 		$link-text-decoration-hover;
 		text-decoration-skip: 	ink;
 		text-decoration-skip-ink: auto;
 		
 		/* Text and background color for dark mode */
 		@media (prefers-color-scheme: dark) {
-			color: 					$link-hover-color-dark-mode;
+			color: 					$link-hover-color-dark-mode !important;
 		}
+	}
+	
+	&:focus {
+		text-decoration: 		$link-text-decoration-focus !important;
 	}
 	
 }
@@ -331,9 +334,11 @@ sup {
     a {
 	    text-decoration: none;
 	    
-	    &:hover,
+	    &:hover {
+			text-decoration: none;
+		}
 	    &:focus {
-		    text-decoration: none;
+		    text-decoration: $link-text-decoration-focus;
 	    }
     }
 }

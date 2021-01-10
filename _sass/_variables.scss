@@ -51,7 +51,8 @@ $link-hover-color-dark-mode:			$cyan;
 $link-font-weight:					normal;
 $link-outline:						none;
 $link-text-decoration:				underline;
-$link-text-decoration-hover:			underline;
+$link-text-decoration-hover:		underline;
+$link-text-decoration-focus:		underline;
 
 $header-background:					$white;
 $header-background-dark-mode:			$black;
@@ -167,7 +168,7 @@ $header-height-base-xl:                 $p-line-height-base-xl + $header-padding
 $header-wordmark-font-weight:				bold;
 $header-font-weight:						normal;
 $header-text-decoration:					none;
-$header-text-decoration-hover:			none;
+$header-text-decoration-hover:			    underline;
 
 
 // FOOTER TEXT SIZES & SPACING

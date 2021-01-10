@@ -78,9 +78,15 @@ header#site-header {
 
 			text-decoration: 		$header-text-decoration;
 		
-			&:hover,
+			&:hover {
+				color:				$header-color-hover !important;
+				text-decoration: 	$header-text-decoration-hover;
+			}
 			&:focus {
-				color:				$header-color-hover;
+				color:				$header-color;
+				@media (prefers-color-scheme: dark) {
+					color: 		$header-color-dark-mode;
+				}
 				text-decoration: 	$header-text-decoration-hover;
 			}
 			
