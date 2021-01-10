@@ -26,7 +26,7 @@ a {
 		
 		/* Text and background color for dark mode */
 		@include dark-mode {
-			color: 					$link-hover-color-dark-mode !important;
+			color: 					$link-hover-color-dark-mode;
 		}
 	}
 	
@@ -39,15 +39,17 @@ a {
 		
 		/* Text and background color for dark mode */
 		@include dark-mode {
-			color: 					$link-focus-color-dark-mode !important;
+			color: 					$link-focus-color-dark-mode;
 		}
 		
 	}
 	
 	&:focus:hover {
 		background: $body-background-dark-mode !important;
+		color: $cyan !important;
 		@include dark-mode {
 			background: $body-background !important;
+			color: $cyan !important;
 		}
 	}
 	
