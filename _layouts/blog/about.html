@@ -31,17 +31,20 @@ layout: blog/page
 			
 			<article class="about-job-entry">
 				{% if entry.notes %}
-				<button class="about-job-entry--header expand-button">
-					<h4 class="about-job-title">
-						{% for entry in entry.notes %}<span class="about-job-title--label">{% endfor %}
-						{{ entry.title | smartify }}
-						{% for entry in entry.notes %}</span>{% endfor %}
-					</h4>
-					{% if entry.end == "present" %}
-					<p class="about-time">{{ entry.start | date: '%B %Y' }} to {{ entry.end }}</p>
-					{% else %}
-					<p class="about-time">{{ entry.start | date: '%B %Y' }} to {{ entry.end | date: '%B %Y' }}</p>
-					{% endif %}
+				{% assign entrytitle = entry.title | slugify %}
+				<button id="about-button--{{ entrytitle }}" aria-controls="about-details--{{ entrytitle }}" aria-expanded="false" class="about-job-entry--header expand-button">
+					<header>
+						<h4 class="about-job-title">
+							{% for entry in entry.notes %}<span class="about-job-title--label">{% endfor %}
+							{{ entry.title | smartify }}
+							{% for entry in entry.notes %}</span>{% endfor %}
+						</h4>
+						{% if entry.end == "present" %}
+						<p class="about-time">{{ entry.start | date: '%B %Y' }} to {{ entry.end }}</p>
+						{% else %}
+						<p class="about-time">{{ entry.start | date: '%B %Y' }} to {{ entry.end | date: '%B %Y' }}</p>
+						{% endif %}
+					</header>
 				</button>
 				{% else %}
 				<header class="about-job-entry--header">
@@ -59,7 +62,7 @@ layout: blog/page
 				{% endif %}
 				
 				{% for entry in entry.notes %}
-				<section class="about-details">
+				<section id="about-details--{{ entrytitle }}" aria-labelledby="about-button--{{ entry-title }}" class="about-details">
 				{{ entry.description | markdownify }}
 	
 				{% if entry.projects %}
