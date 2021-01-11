@@ -185,22 +185,37 @@ body#blog-about {
 		text-align: 		left;
 		
 		@include xs {
-			
+			font-size: 		$h5-font-size-base-xs;
+			line-height: 	$h5-line-height-base-xs;
+			padding-top: 		$h5-padding-bottom-xs;
+			padding-bottom: 	$h5-padding-bottom-xs * 0.5;
 		}
 		@include sm {
-			
+			font-size: 		$h5-font-size-base-sm;
+			line-height: 	$h5-line-height-base-sm;
+			padding-top: 		$h5-padding-bottom-sm;
+			padding-bottom: 	$h5-padding-bottom-sm * 0.5;
 		}
 		@include md {
-			
+			font-size: 		$h5-font-size-base-md;
+			line-height: 	$h5-line-height-base-md;
+			padding-top: 		$h5-padding-bottom-md;
+			padding-bottom: 	$h5-padding-bottom-md * 0.5;
 		}
 		@include lg {
-			
+			font-size: 		$h5-font-size-base-lg;
+			line-height: 	$h5-line-height-base-lg;
+			padding-top: 		$h5-padding-bottom-lg;
+			padding-bottom: 	$h5-padding-bottom-lg * 0.5;
 		}
 		@include xl {
-			
+			font-size: 		$h5-font-size-base-xl;
+			line-height: 	$h5-line-height-base-xl;
+			padding-top: 		$h5-padding-bottom-xl;
+			padding-bottom: 	$h5-padding-bottom-xl * 0.5;
 		}
 		
-		padding-bottom: 0;
+		font-weight:			$h5-font-weight;
 		
 	}
 	
@@ -361,6 +376,7 @@ body#blog-about {
 	ul.about-job-projects {
 		
 		padding-left: 0;
+	
 		
 		@include xs {
 			padding-top: 		0;
@@ -397,34 +413,54 @@ body#blog-about {
 			@include xs {
 				font-size: 		$p-font-size-base-xs;
 				line-height: 	$p-line-height-base-xs;
+				padding-left: 		$p-font-size-base-xs * 1.25;
+				padding-bottom: $p-padding-bottom-xs * 0.5;
 			}
 			@include sm {
 				font-size: 		$p-font-size-base-sm;
 				line-height: 	$p-line-height-base-sm;
+				padding-left: 		$p-font-size-base-sm * 1.25;
+				padding-bottom: $p-padding-bottom-sm * 0.5;
 			}
 			@include md {
 				font-size: 		$p-font-size-base-md;
 				line-height: 	$p-line-height-base-md;
+				padding-left: 		$p-font-size-base-md * 1.25;
+				padding-bottom: $p-padding-bottom-md * 0.5;
 			}
 			@include lg {
 				font-size: 		$p-font-size-base-lg;
 				line-height: 	$p-line-height-base-lg;
+				padding-left: 		$p-font-size-base-lg * 1.25;
+				padding-bottom: $p-padding-bottom-lg * 0.5;
 			}
 			@include xl {
 				font-size: 		$p-font-size-base-xl;
 				line-height: 	$p-line-height-base-xl;
+				padding-left: 		$p-font-size-base-xl * 1.25;
+				padding-bottom: $p-padding-bottom-xl * 0.5;
 			}
-			
-			padding-bottom: 10px;
 			
 			font-weight:		$p-font-weight;
 			
-			a {
-				text-decoration: none;
-				
-				&:hover,
-				&:focus {
-					text-decoration: $link-text-decoration-hover;
+			&::before {
+				position: absolute;
+				content: "\2014";
+	   
+				 @include xs {	    
+					left: $p-font-size-base-xs * 0.75;
+				}
+				@include sm {	    
+					left: $p-font-size-base-sm * 0.75;
+				}
+				@include md {	    
+					left: $p-font-size-base-md * 0.75;
+				}
+				@include lg {	    
+					left: $p-font-size-base-lg * 0.65;
+				}
+				@include xl {	    
+					left: $p-font-size-base-xl * 0.5;
 				}
 			}
 			
