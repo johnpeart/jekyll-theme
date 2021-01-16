@@ -177,7 +177,6 @@ body#wishlist-home {
 			background: $blockquote-background-dark-mode;
 		}		
 		
-		
 		padding: 15px 10px 10px;
 		
 		@include sm-up {
@@ -211,6 +210,10 @@ body#wishlist-home {
 			label {
 				font-weight: normal;
 				vertical-align: middle;
+				
+				@include xs {
+					line-height: $input-size;
+				}
 			}
 		}
 		
