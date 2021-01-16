@@ -77,6 +77,12 @@ body#wishlist-home {
 		list-style: 		none !important;
 		
 		li.wishlist-item {
+			
+			display: block;
+			&.hidden {
+				display: none;
+			}
+			
 			list-style: 	none;
 			padding: 		20px 0;
 						
@@ -163,7 +169,5 @@ body#wishlist-home {
 			@include clearfix;
 		}
 	}
-					
-	
 	
 }
