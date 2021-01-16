@@ -181,7 +181,7 @@ input[type="radio"] {
 
 	~ label {
 		display: inline-block;
-		height: $touch-target-size - 2px;
+		height: $input-size;
 		margin-top: 0;
 		margin-bottom: 0;
 		padding: 0px $radios-label-padding-left-right;
