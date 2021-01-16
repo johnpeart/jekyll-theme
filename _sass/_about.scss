@@ -2,7 +2,7 @@
 
 // Loop page styles
 
-body#blog-about {
+body#about-home {
 	
 	section#page-content > section {
 		
@@ -312,6 +312,11 @@ body#blog-about {
 			box-shadow: 0 0 0 4px $cyan;
 			border-color: $cyan;
 			z-index: 1000000;
+			color: $white;
+			
+			h4.about-job-title::after {
+				color: $white;
+			}
 		}
 		
 		&:focus {
