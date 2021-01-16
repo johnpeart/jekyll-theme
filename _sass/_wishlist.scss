@@ -170,4 +170,52 @@ body#wishlist-home {
 		}
 	}
 	
+	fieldset#toggle-purchased {
+		
+		background: $blockquote-background;
+		@include dark-mode {
+			background: $blockquote-background-dark-mode;
+		}		
+		
+		
+		padding: 15px 10px 10px;
+		
+		@include sm-up {
+			text-align: right;
+			padding: 20px;
+		}
+		
+		legend {
+			@extend p;
+			display: inline-block;
+			text-align: left;
+			float: left;
+			
+			font-weight: bold;
+			padding-bottom: $p-padding-bottom-xs * 0.8;
+			@include sm-up {
+				padding-bottom: 0;
+				margin-bottom: 0;
+			}
+		}
+		
+		div.radio-input {
+			
+			margin-bottom: 10px;
+			
+			@include sm-up {
+				display: inline-block;
+				margin-bottom: 0;
+			}
+			
+			label {
+				font-weight: normal;
+				vertical-align: middle;
+			}
+		}
+		
+		@include clearfix;
+		
+	}
+	
 }
