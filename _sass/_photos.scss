@@ -311,27 +311,27 @@ body#photos-photo {
 			content: "Footnotes";
 		}
 		
-		padding-top: 			$footnotes-font-size-base * 6;
+		padding-top: 			$footnotes-font-size-base * 1;
 		max-width: 			600px;
 		
 		@include xs {
-			padding-top: 		$footnotes-font-size-base-xs * 6;
+			padding-top: 		$footnotes-font-size-base-xs * 1;
 			max-width: 		400px;
 		}
 		@include sm {
-			padding-top: 		$footnotes-font-size-base-sm * 6;
+			padding-top: 		$footnotes-font-size-base-sm * 1;
 			max-width: 		500px;
 		}
 		@include md {
-			padding-top: 		$footnotes-font-size-base-md * 6;
+			padding-top: 		$footnotes-font-size-base-md * 1;
 			max-width: 		450px;
 		}
 		@include lg {
-			padding-top: 		$footnotes-font-size-base-lg * 6;
+			padding-top: 		$footnotes-font-size-base-lg * 1;
 			max-width: 		600px;
 		}
 		@include xl {
-			padding-top: 		$footnotes-font-size-base-xl * 6;
+			padding-top: 		$footnotes-font-size-base-xl * 1;
 			max-width: 		600px;
 		}
 		
