@@ -228,7 +228,7 @@ header#site-header {
 			}
 			
 			@include sm {
-				padding:		($header-padding-top-sm + ($header-font-size-base-sm * 0.2)) $container-padding;
+				padding:		$header-padding-top-xs $container-padding;
 			}
 			
 			font-weight:				$header-wordmark-font-weight;
