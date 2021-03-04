@@ -222,6 +222,7 @@ header#site-header {
 			top:			0;
 			
 			margin: 		0;
+			line-height: 1;
 			
 			@include xs {
 				padding:		$header-padding-top-xs $container-padding;
