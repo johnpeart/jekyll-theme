@@ -224,7 +224,7 @@ header#site-header {
 			margin: 		0;
 			
 			@include xs {
-				padding:		($header-padding-top-xs + ($header-font-size-base-xs * 0.2)) $container-padding;
+				padding:		$header-padding-top-xs $container-padding;
 			}
 			
 			@include sm {
